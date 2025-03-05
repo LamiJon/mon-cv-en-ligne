@@ -90,7 +90,7 @@ function App() {
         <div 
           className="fixed top-0 left-0 w-full h-full bg-cover translate-y-[-50px] z-[-1] transition-all duration-700 ease-in-out"
           style={{
-            backgroundImage: "url('/background.jpg')",
+            backgroundImage: "url('/background.JPG')",
             backgroundRepeat: "no-repeat",
             backgroundSize: `auto ${backgroundSettings[activeSection].zoom * 100}%`,
             backgroundPosition: `${backgroundSettings[activeSection].x}% ${backgroundSettings[activeSection].y}%`,
