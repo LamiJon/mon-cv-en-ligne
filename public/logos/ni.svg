@@ -1,0 +1,11 @@
+<svg version="1.2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1535 1024" width="1535" height="1024">
+	<title>NATI-svg</title>
+	<style>
+		.s0 { fill: #000000 } 
+	</style>
+	<g id="Clip-Path: Page 1">
+		<g id="Page 1">
+			<path id="Path 5" fill-rule="evenodd" class="s0" d="m1 341.1h340.6v681.4h-340.6zm340.6 0v-340.7h340.7c188.3 0 340.7 152.4 340.7 340.7v681.4h-340.7v-681.4zm851.7 340.7v-681.4h340.7v1023.6c-188.3-1.5-340.7-153.9-340.7-342.2z"/>
+		</g>
+	</g>
+</svg>
