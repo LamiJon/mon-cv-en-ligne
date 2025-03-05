@@ -12,7 +12,7 @@ import { useLocation } from "react-router-dom";
 
 function App() {
   const containerRef = useRef(null); // Référence pour la div qui scroll
-  const [scrollY, setScrollY] = useState(0);
+  //const [scrollY, setScrollY] = useState(0);
   const [activeSection, setActiveSection] = useState("about");
   const location = useLocation();
 
@@ -65,11 +65,11 @@ function App() {
   }, [location]);
 
   const backgroundSettings = {
-    about: { x: 50, y: 26, zoom: 3 }, // Haut de l'image, zoomé
-    skills: { x: 50, y: 36, zoom: 2.9 }, // Centre avec léger zoom
-    experience: { x: 50, y: 60, zoom: 2.92 }, // Plus bas sur l'image
-    interets: { x: 50, y: 76, zoom: 3.6 }, // Décalé vers la gauche
-    contact: { x: 50, y: 96, zoom: 2.87 }, // Tout en bas à droite
+    about: { x: 50, y: 26, zoom: 3 },
+    skills: { x: 50, y: 36, zoom: 2.9 },
+    experience: { x: 50, y: 60, zoom: 2.92 },
+    interets: { x: 50, y: 76, zoom: 3.6 },
+    contact: { x: 50, y: 96, zoom: 2.87 },
   };  
 
   return (
