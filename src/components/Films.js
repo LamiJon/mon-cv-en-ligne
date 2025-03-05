@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useRef } from "react";
 import { fetchFilms } from "../utils/letterboxdScraper";
 import { fetchSynopsis } from "../utils/letterboxdScraper";
-import Navbar from "./Navbar"; // Assure-toi que le chemin est correct
+//import Navbar from "./Navbar"; // Assure-toi que le chemin est correct
 
 const Films = () => {
   const [films, setFilms] = useState([]);
@@ -10,13 +10,13 @@ const Films = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [hoveredSynopsis, setHoveredSynopsis] = useState("");
   const [synopsisIsLoading, setSynopsisIsLoading] = useState(false);
-  const [isHovered, setIsHovered] = useState(false);
+  //const [isHovered, setIsHovered] = useState(false);
   const [scrollY, setScrollY] = useState(0);
   const containerRef = useRef(null);
   
   const handleHover = async (filmHref) => {
     if (!filmHref) return;
-    setSynopsisIsLoading(true); // ✅ Active la roue de chargement
+    //setSynopsisIsLoading(true); // ✅ Active la roue de chargement
     setHoveredSynopsis(""); // ✅ Efface l'ancien synopsis
     const synopsis = await fetchSynopsis(filmHref);
     //console.log("Synopsis récupéré :", synopsis);

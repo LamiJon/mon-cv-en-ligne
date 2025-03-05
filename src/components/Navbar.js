@@ -1,12 +1,12 @@
-import React, { useLayoutEffect, useState } from "react";
+//import React, { useLayoutEffect, useState } from "react";
 import { FaLinkedin } from "react-icons/fa"; // Importer l'icône LinkedIn
 import { useLocation } from "react-router-dom";
 
 const Navbar = () => {
-  const [scrolled, setScrolled] = useState(false);
+  //const [scrolled, setScrolled] = useState(false);
   const location = useLocation(); // ✅ Récupère l'URL actuelle
 
-  useLayoutEffect(() => {
+  /*useLayoutEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 50);
     };
@@ -16,7 +16,7 @@ const Navbar = () => {
 
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  }, []);*/
 
   const scrollToSection = (id) => {
     if (location.pathname !== "/") {
