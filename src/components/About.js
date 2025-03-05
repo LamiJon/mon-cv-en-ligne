@@ -5,9 +5,9 @@ const About = () => {
   return (
     <motion.section className="w-full min-h-screen flex items-center justify-center bg-bleu-nuit/20 text-blanc-casse">
       <div className="text-center">
-        <h2 className="text-4xl font-bold mb-4">À propos de moi</h2>
-        <p className="text-lg max-w-2xl mx-auto">
-          Je suis un développeur passionné par la création d’expériences web modernes et interactives...
+        <h2 className="text-4xl font-bold mb-8">Bienvenue !<br></br>Ici vous allez apprendre à mieux me connaitre.</h2>
+        <p className="text-lg max-w-4xl mx-auto">
+          Moi c'est Jonathan Brachet et je suis développeur full-stack avec trois ans d'expériences dans ce domaine.<br></br>Je suis également vidéaste autodidacte. Je réalises des vidéos pour mes clients afin de mettre en avant leur service.<br></br>Ce que j'aime dans ces métiers c'est l'aspect créatif, le fait de concevoir et de pouvoir constater visuellement du résultat est quelque chose de très stimulant pour moi. Cet aspect créatif permet aussi de se creuser les méninges, de toujours se surpasser pour trouver des idées originales. De plus, la constante évolution technologique dans ces domaines permettent de toujours maintenir de l'attrait, de part la curiosité qu'elle suscite.<br></br>En somme : on ne s'ennuie jamais 😃
         </p>
       </div>
     </motion.section>
