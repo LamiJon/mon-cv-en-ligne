@@ -62,7 +62,7 @@ const Films = () => {
       <div ref={containerRef}
           className="fixed top-0 left-0 w-full h-full bg-cover bg-center bg-[auto_100vh] translate-y-[-50px] scale-110 z-[-1]"
           style={{
-            backgroundImage: "url('/background_films.jpg')",
+            backgroundImage: "url('/background_films.JPG')",
             backgroundRepeat: "no-repeat",
             backgroundSize: "auto 130vh",
             backgroundPosition: `center ${scrollY * -0.064}px`, // Appliquer l'effet Parallax ici
