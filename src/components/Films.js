@@ -9,7 +9,7 @@ const Films = () => {
   const [sortOption, setSortOption] = useState("sortie"); // Option de tri sélectionnée
   const [isLoading, setIsLoading] = useState(false);
   const [hoveredSynopsis, setHoveredSynopsis] = useState("");
-  const [synopsisIsLoading, setSynopsisIsLoading] = useState(false);
+  //const [synopsisIsLoading, setSynopsisIsLoading] = useState(false);
   //const [isHovered, setIsHovered] = useState(false);
   const [scrollY, setScrollY] = useState(0);
   const containerRef = useRef(null);
