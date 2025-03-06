@@ -15,7 +15,7 @@ import React, { useState } from "react";
 const Experience = () => {
   const [selectedCategory, setSelectedCategory] = useState("informatique"); // 💡 Expériences Informatique par défaut
   const [selectedAudiovisual, setSelectedAudiovisual] = useState(0); // Premier élément sélectionné par défaut
-  const [direction, setDirection] = useState(1); // 1 = droite, -1 = gauche
+  //const [direction, setDirection] = useState(1); // 1 = droite, -1 = gauche
 
   const experiences = {
     formations: [
@@ -130,7 +130,7 @@ const Experience = () => {
         </div>
 
         {/* Affichage dynamique des informations */}
-        <AnimatePresence mode="wait" custom={direction}>
+        <AnimatePresence mode="wait">
           <motion.div
             key={selectedCategory}
             initial={{ x: 100, opacity: 0 }} // Départ en dehors de l'écran
