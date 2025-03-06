@@ -62,7 +62,7 @@ const Cuisine = () => {
       <div
         className="fixed top-0 left-0 w-full h-full bg-cover bg-center bg-[auto_100vh] translate-y-[-50px] scale-110 z-[-1] blur-md"
         style={{
-          backgroundImage: "url('/background_cuisine.JPG')",
+          backgroundImage: "url('/background_cuisine.jpg')",
           backgroundRepeat: "no-repeat",
           backgroundSize: "auto 130vh",
           backgroundPosition: `center` // Appliquer l'effet Parallax ici
