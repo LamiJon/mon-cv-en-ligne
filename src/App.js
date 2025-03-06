@@ -64,13 +64,13 @@ function App() {
     }
   }, [location]);
 
-  const backgroundSettings = {
+  {/*const backgroundSettings = {
     about: { x: 50, y: 26, zoom: 3 },
     skills: { x: 50, y: 36, zoom: 2.9 },
     experience: { x: 50, y: 60, zoom: 2.92 },
     interets: { x: 50, y: 76, zoom: 3.6 },
     contact: { x: 50, y: 96, zoom: 2.87 },
-  };  
+  };*/}
 
   const background1Settings = {
     about: { x: 48, y: 4, zoom: 3 },
@@ -80,13 +80,13 @@ function App() {
     contact: { x: 42, y: 89, zoom: 3.5 },
   }; 
 
-  const background2Settings = {
+  {/*const background2Settings = {
     about: { x: 46, y: 9, zoom: 2.9 },
     skills: { x: 50, y: 23, zoom: 2.8 },
     experience: { x: 50, y: 60, zoom: 2.92 },
     interets: { x: 50, y: 76, zoom: 3.6 },
     contact: { x: 50, y: 96, zoom: 2.87 },
-  }; 
+  };*/}
 
   return (
     <div ref={containerRef} className="h-screen overflow-y-auto scroll-container relative">
