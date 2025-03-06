@@ -75,12 +75,12 @@ const Contact = () => {
   const [messageVisible, setMessageVisible] = useState(false);
 
   return (
-    <section id="contact" className="w-full min-h-screen flex flex-col justify-center items-center /*bg-gris-acier/50*/ bg-gris-acier/20 px-4">
+    <section id="contact" className="w-full min-h-screen flex flex-col justify-center items-center bg-bleu-nuit/30 px-4">
       <h2 className="text-3xl font-bold mb-6">Me Contacter</h2>
 
       <form
         onSubmit={handleSubmit(onSubmit)}
-        className="w-full max-w-lg bg-brun-terreux/30 p-6 rounded-lg shadow-lg"
+        className="w-full max-w-lg bg-brun-terreux/50 p-6 rounded-lg shadow-lg"
       >
         <div className="mb-4">
           <label className="block text-sm text-blanc-casse mb-2">Nom</label>

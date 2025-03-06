@@ -19,7 +19,7 @@ import { motion } from "framer-motion";
 
 const skills = [
   { name: "React", logo: "/logos/react.svg",
-    description: "Je suis le descriptif de React"
+    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor. Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi. Proin porttitor, orci nec nonummy molestie, enim est eleifend mi, non fermentum diam nisl sit amet erat. Duis semper. Duis arcu massa, scelerisque vitae, consequat in, pretium a, enim. Pellentesque congue. Ut in risus volutpat libero pharetra tempor. Cras vestibulum bibendum augue. Praesent egestas leo in pede. Praesent blandit odio eu enim. Pellentesque sed dui ut augue blandit sodales. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Aliquam nibh. Mauris ac mauris sed pede pellentesque fermentum. Maecenas adipiscing ante non diam sodales hendrerit."
   },
   { name: "JavaScript", logo: "/logos/javascript.svg",
     description: "Je suis le descriptif de JavaScript"
@@ -105,9 +105,13 @@ const Skills = () => {
 
       <div className="relative w-[900px] h-[900px] mx-auto rounded-full animate-[rotateEllipse_100s_linear_infinite] mt-12">
         {/* Texte explicatif au centre */}
-        <div className="absolute w-[900px] h-[900px] rounded-full blur-2xl bg-gray-400/40 center"></div>
-        <div className="absolute inset-0 flex items-center justify-center text-2xl text-black font-bold animate-[rotateSkill_100s_linear_infinite]">
-          {activeSkill ? activeSkill.description : "Survolez un logo"}
+        <div className="absolute w-[900px] h-[900px] rounded-full blur-2xl bg-gray-500/40 center"></div>
+        <div className="absolute inset-0 flex items-center justify-center animate-[rotateSkill_100s_linear_infinite]">
+          <div className="w-[600px] h-[600px] rounded-full flex items-center justify-center p-4">
+            <div className="max-h-[300px] overflow-auto text-black text-lg font-bold text-center">
+              {activeSkill ? activeSkill.description : "Survolez un logo"}
+            </div>
+          </div>
         </div>
         {skills.map((skill, index) => {
           const angle = (index / skills.length) * 2 * Math.PI;

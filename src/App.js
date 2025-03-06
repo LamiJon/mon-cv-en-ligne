@@ -72,6 +72,22 @@ function App() {
     contact: { x: 50, y: 96, zoom: 2.87 },
   };  
 
+  const background1Settings = {
+    about: { x: 48, y: 4, zoom: 3 },
+    skills: { x: 50, y: 20, zoom: 3 },
+    experience: { x: 50, y: 45, zoom: 2.92 },
+    interets: { x: 50, y: 60, zoom: 2.92 },
+    contact: { x: 42, y: 89, zoom: 3.5 },
+  }; 
+
+  const background2Settings = {
+    about: { x: 46, y: 9, zoom: 2.9 },
+    skills: { x: 50, y: 23, zoom: 2.8 },
+    experience: { x: 50, y: 60, zoom: 2.92 },
+    interets: { x: 50, y: 76, zoom: 3.6 },
+    contact: { x: 50, y: 96, zoom: 2.87 },
+  }; 
+
   return (
     <div ref={containerRef} className="h-screen overflow-y-auto scroll-container relative">
       <>
@@ -87,7 +103,7 @@ function App() {
           }}
         />*/}
 
-        <div 
+        {/*<div 
           className="fixed top-0 left-0 w-full h-full bg-cover translate-y-[-50px] z-[-1] transition-all duration-700 ease-in-out"
           style={{
             backgroundImage: "url('/background.JPG')",
@@ -96,7 +112,29 @@ function App() {
             backgroundPosition: `${backgroundSettings[activeSection].x}% ${backgroundSettings[activeSection].y}%`,
             transform: `scale(${backgroundSettings[activeSection].zoom})`
           }}
+        />*/}
+
+        <div 
+          className="fixed top-0 left-0 w-full h-full bg-cover translate-y-[-50px] z-[-1] transition-all duration-700 ease-in-out blur-sm"
+          style={{
+            backgroundImage: "url('/background1.JPG')",
+            backgroundRepeat: "no-repeat",
+            backgroundSize: `auto ${background1Settings[activeSection].zoom * 100}%`,
+            backgroundPosition: `${background1Settings[activeSection].x}% ${background1Settings[activeSection].y}%`,
+            transform: `scale(${background1Settings[activeSection].zoom})`
+          }}
         />
+
+        {/*<div 
+          className="fixed top-0 left-0 w-full h-full bg-cover translate-y-[-50px] z-[-1] transition-all duration-700 ease-in-out"
+          style={{
+            backgroundImage: "url('/background2.JPG')",
+            backgroundRepeat: "no-repeat",
+            backgroundSize: `auto ${background2Settings[activeSection].zoom * 100}%`,
+            backgroundPosition: `${background2Settings[activeSection].x}% ${background2Settings[activeSection].y}%`,
+            transform: `scale(${background2Settings[activeSection].zoom})`
+          }}
+        />*/}
 
         <Routes>
           <Route path="/" element={

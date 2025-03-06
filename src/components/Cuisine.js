@@ -59,21 +59,30 @@ const Cuisine = () => {
 
   return (
     <div className="min-h-screen flex flex-col items-center justify-center text-white pt-[100px]">
+      <div
+        className="fixed top-0 left-0 w-full h-full bg-cover bg-center bg-[auto_100vh] translate-y-[-50px] scale-110 z-[-1]"
+        style={{
+          backgroundImage: "url('/background_cuisine.JPG')",
+          backgroundRepeat: "no-repeat",
+          backgroundSize: "auto 130vh",
+          backgroundPosition: `center` // Appliquer l'effet Parallax ici
+        }}
+      />
       <h1 className="text-4xl font-bold mb-6 text-outline">Dernières vidéos de mes chaînes préférées 🍳</h1>
-      <div className="px-6 py-2 size-fit rounded bg-black/50 center mb-20">
+      <div className="px-6 py-2 size-fit rounded-xl bg-gray-900/90 center mb-10">
         <p className="text-lg text-center max-w-2xl">
           Voici les dernières vidéos des chaînes YouTube que je suis pour trouver de nouvelles inspirations culinaires !
         </p>
       </div>
       
-      <div className="w-full flex flex-col items-center">
+      <div className="flex flex-col items-center bg-gray-900/90 px-6 py-2 rounded-xl">
         {videos.length > 0 ? (
           videos.map((channel, index) => (
-            <div key={index} className="relative flex flex-col text-center items-center justify-center mb-20">
-              <h2 className="text-2xl font-semibold mb-2">{channel.name}</h2>
-              <p>{channel.presentation}</p>
+            <div key={index} className="relative flex flex-col text-center items-center justify-center mb-10">
+              <h2 className="text-2xl font-semibold">{channel.name}</h2>
+              <p className="mb-2">{channel.presentation}</p>
               <iframe
-                classname="flex justify-center w-full mx-auto"
+                classname="flex justify-center w-full mx-auto rounded-lg"
                 width={channel.videoURL.includes("/shorts/") ? "360" : "784"}
                 height={channel.videoURL.includes("/shorts/") ? "640" : "441"}
                 src={channel.videoURL.replace("watch?v=", "embed/").replace("/shorts/", "/embed/")}

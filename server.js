@@ -116,6 +116,7 @@ app.get("/api/youtube-videos", async (req, res) => {
     { name: "Whoogy's", url: "https://www.youtube.com/@Whoogys/videos"},
     { name: "Eloy Spinnler", url: "https://www.youtube.com/@EloySpinnler/videos"},
     { name: "Bonne Pitance", url: "https://www.youtube.com/@bonnepitance/videos"},
+    { name: "Philippe Etchebest", url: "https://www.youtube.com/@ChefEtchebest"},
     { name: "Au Bord de l'Assiette", url: "https://www.youtube.com/@auborddelassiette/shorts"}
   ];
 

@@ -60,14 +60,14 @@ const Films = () => {
   return (
     <div ref={containerRef} className="h-screen overflow-y-auto scroll-container relative">
       <div ref={containerRef}
-          className="fixed top-0 left-0 w-full h-full bg-cover bg-center bg-[auto_100vh] translate-y-[-50px] scale-110 z-[-1]"
-          style={{
-            backgroundImage: "url('/background_films.JPG')",
-            backgroundRepeat: "no-repeat",
-            backgroundSize: "auto 130vh",
-            backgroundPosition: `center ${scrollY * -0.064}px`, // Appliquer l'effet Parallax ici
-          }}
-        />
+        className="fixed top-0 left-0 w-full h-full bg-cover bg-center bg-[auto_100vh] translate-y-[-50px] scale-110 z-[-1]"
+        style={{
+          backgroundImage: "url('/background_films.JPG')",
+          backgroundRepeat: "no-repeat",
+          backgroundSize: "auto 130vh",
+          backgroundPosition: `center ${scrollY * -0.064}px`, // Appliquer l'effet Parallax ici
+        }}
+      />
       <div className="min-h-screen flex flex-col items-center text-white pt-20">
         <h2 className="text-4xl font-bold mb-4 text-outline">Les films que j’ai vus 🎬</h2>
         {/*<button

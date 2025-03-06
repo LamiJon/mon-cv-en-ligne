@@ -6,7 +6,7 @@ const Interets = () => {
   return (
     <motion.section
       id="Interets"
-      className="w-full min-h-screen flex items-center justify-center bg-gray-200/20"
+      className="w-full min-h-screen flex items-center justify-center bg-bleu-nuit/20"
       /*initial={{ opacity: 0, y: 50 }} // Départ invisible et en bas
       animate={{ opacity: 1, y: 0 }} // Apparition et montée
       exit={{ opacity: 0, y: -50 }}
@@ -30,7 +30,7 @@ const Interets = () => {
                 to="/cuisine"
                 className="px-3 py-3 bg-bleu-nuit/50 text-blanc-casse rounded-lg hover:bg-bleu-nuit transition duration-300"
             >
-                Voir les chaines de cuisine Youtube que je suis 🍴
+                Découvrir les chaines de cuisine Youtube que je suis 🍴
             </Link></li>
           <li className="w-800 h-10">
             🎙️ Streaming :
@@ -40,7 +40,7 @@ const Interets = () => {
                 rel="noopener noreferrer"
                 className="px-3 py-3 bg-bleu-nuit/50 text-blanc-casse rounded-lg hover:bg-bleu-nuit transition duration-300"
             >
-                Voir ma chaîne Twitch 🕹️
+                Visiter ma chaîne Twitch 🕹️
             </a>
           </li>
         </ul>
