@@ -60,7 +60,7 @@ const Cuisine = () => {
   return (
     <div className="min-h-screen flex flex-col items-center justify-center text-white pt-[100px]">
       <div
-        className="fixed top-0 left-0 w-full h-full bg-cover bg-center bg-[auto_100vh] translate-y-[-50px] scale-110 z-[-1]"
+        className="fixed top-0 left-0 w-full h-full bg-cover bg-center bg-[auto_100vh] translate-y-[-50px] scale-110 z-[-1] blur-md"
         style={{
           backgroundImage: "url('/background_cuisine.JPG')",
           backgroundRepeat: "no-repeat",
