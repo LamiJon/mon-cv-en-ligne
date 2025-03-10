@@ -73,16 +73,6 @@ html, body {
   height: 100vh;
 }
 
-/*.scroll-container {
-  scroll-snap-type: y mandatory;
-  scroll-behavior: smooth; /* Ajoute une transition fluide */
-/*}*/
-
-/*.section {
-  height: 100vh;
-  scroll-snap-align: start; /* Chaque section s'aligne parfaitement */
-/*}*/
-
 .scroll-container {
   scroll-snap-type: y mandatory;
   scroll-behavior: smooth;

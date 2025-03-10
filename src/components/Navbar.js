@@ -1,22 +1,8 @@
-//import React, { useLayoutEffect, useState } from "react";
 import { FaLinkedin } from "react-icons/fa"; // Importer l'icône LinkedIn
 import { useLocation } from "react-router-dom";
 
 const Navbar = () => {
-  //const [scrolled, setScrolled] = useState(false);
   const location = useLocation(); // ✅ Récupère l'URL actuelle
-
-  /*useLayoutEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 50);
-    };
-
-    handleScroll();
-    //console.log(window.scrollY);
-
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);*/
 
   const scrollToSection = (id) => {
     if (location.pathname !== "/") {
@@ -44,7 +30,7 @@ const Navbar = () => {
           <button className="hover:text-gray-300 transition duration-200" onClick={() => scrollToSection("skills")}>Compétences</button>
         </li>
         <li>
-          <button className="hover:text-gray-300 transition duration-200" onClick={() => scrollToSection("experience")}>Expérience</button>
+          <button className="hover:text-gray-300 transition duration-200" onClick={() => scrollToSection("experience")}>Expériences</button>
         </li>
         <li>
           <button className="hover:text-gray-300 transition duration-200" onClick={() => scrollToSection("Interets")}>Intérêts</button>

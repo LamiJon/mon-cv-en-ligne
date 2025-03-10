@@ -12,18 +12,10 @@ import { useLocation } from "react-router-dom";
 
 function App() {
   const containerRef = useRef(null); // Référence pour la div qui scroll
-  //const [scrollY, setScrollY] = useState(0);
   const [activeSection, setActiveSection] = useState("about");
   const location = useLocation();
 
   useEffect(() => {
-    /*const handleScroll = () => {
-      if (containerRef.current) {
-        setScrollY(containerRef.current.scrollTop);
-        console.log("Position du scroll :", containerRef.current.scrollTop);
-      }
-    };*/
-
     const handleScroll = () => {
       if (containerRef.current) {
         const sections = document.querySelectorAll(".section");
@@ -65,39 +57,17 @@ function App() {
   }, [location]);
 
   const background1Settings = {
-    about: { x: 48, y: 4, zoom: 3 },
-    skills: { x: 50, y: 20, zoom: 3 },
-    experience: { x: 50, y: 45, zoom: 2.92 },
-    interets: { x: 50, y: 60, zoom: 2.92 },
-    contact: { x: 42, y: 89, zoom: 3.5 },
+    about: { x: 48, y: 4, zoom: 3.03 },
+    skills: { x: 50, y: 20, zoom: 3.03 },
+    experience: { x: 50, y: 45, zoom: 2.95 },
+    interets: { x: 50, y: 62, zoom: 2.95 },
+    contact: { x: 42, y: 89, zoom: 3.53 },
   }; 
 
   return (
     <div ref={containerRef} className="h-screen overflow-y-auto scroll-container relative">
       <>
         <Navbar />
-
-        {/*<div 
-          className="fixed top-0 left-0 w-full h-full bg-cover bg-center bg-[auto_100vh] translate-y-[-50px] scale-110 z-[-1]"
-          style={{
-            backgroundImage: "url('/background.jpg')",
-            backgroundRepeat: "no-repeat",
-            backgroundSize: "auto 130vh",
-            backgroundPosition: `center ${scrollY * -0.064}px`, // Appliquer l'effet Parallax ici
-          }}
-        />*/}
-
-        {/*<div 
-          className="fixed top-0 left-0 w-full h-full bg-cover translate-y-[-50px] z-[-1] transition-all duration-700 ease-in-out"
-          style={{
-            backgroundImage: "url('/background.JPG')",
-            backgroundRepeat: "no-repeat",
-            backgroundSize: `auto ${backgroundSettings[activeSection].zoom * 100}%`,
-            backgroundPosition: `${backgroundSettings[activeSection].x}% ${backgroundSettings[activeSection].y}%`,
-            transform: `scale(${backgroundSettings[activeSection].zoom})`
-          }}
-        />*/}
-
         <div 
           className="fixed top-0 left-0 w-full h-full bg-cover translate-y-[-50px] z-[-1] transition-all duration-700 ease-in-out blur-sm"
           style={{
@@ -108,18 +78,7 @@ function App() {
             transform: `scale(${background1Settings[activeSection].zoom})`
           }}
         />
-
-        {/*<div 
-          className="fixed top-0 left-0 w-full h-full bg-cover translate-y-[-50px] z-[-1] transition-all duration-700 ease-in-out"
-          style={{
-            backgroundImage: "url('/background2.JPG')",
-            backgroundRepeat: "no-repeat",
-            backgroundSize: `auto ${background2Settings[activeSection].zoom * 100}%`,
-            backgroundPosition: `${background2Settings[activeSection].x}% ${background2Settings[activeSection].y}%`,
-            transform: `scale(${background2Settings[activeSection].zoom})`
-          }}
-        />*/}
-
+        
         <Routes>
           <Route path="/" element={
             <main className="h-screen">

@@ -1,14 +1,3 @@
-/*function Experience() {
-    return (
-      <div>
-        <h2>Expériences professionnelles</h2>
-        <p>Développeur chez [Entreprise] - [Année]</p>
-      </div>
-    );
-  }
-  
-  export default Experience;*/
-  
 import { motion, AnimatePresence } from "framer-motion";
 import React, { useState } from "react";
 
@@ -64,23 +53,23 @@ const Experience = () => {
         titre: "Vidéo - Poitou Bière Festival 2023", 
         type: "video", 
         url: "/videos/PBF2023.mp4", 
-        description: "Vidéo courte de type aftermovie, du Poitou Bière Festival édition 2023. Allant de brasseurs passionnés à goûteurs plus ou moins confirmés,\namoureux de saveur houblonnée et de belles rencontres, tous sont réunis pour partager un moment d'exception autour de boissons artisanales.",
-        width: "940px",
-        height: "528px"
+        description: "Vidéo courte de type aftermovie, du Poitou Bière Festival édition 2023. Allant de brasseurs passionnés à goûteurs plus ou moins confirmés, amoureux de saveur houblonnée et de belles rencontres, tous sont réunis pour partager un moment d'exception autour de boissons artisanales.",
+        width: "752px",
+        height: "422px"
       },
       { 
         titre: "Vidéo - Chaone Café", 
         type: "video", 
         url: "/videos/Chaone.mp4", 
-        description: "Réalisation d'une vidéo très courte au format vertical, destinée aux réseaux de type Instagram et TikTok.\nLe Chaone est un lieu qui fait bon y respirer les saveurs gourmandes et réconfortantes qui en émanent. Qu'on y aille seul pour traviller\nou pour partager un moment avec ses proche, ce café de curiosité et un repère idéal pour passer un moment chaleureux.",
-        width: "320px",
-        height: "450px"
+        description: "Réalisation d'une vidéo très courte au format vertical, destinée aux réseaux de type Instagram et TikTok. Le Chaone est un lieu qui fait bon y respirer les saveurs gourmandes et réconfortantes qui en émanent. Qu'on y aille seul pour travailler ou pour partager un moment avec ses proche, ce café de curiosité et un repère idéal pour passer un moment chaleureux.",
+        width: "256px",
+        height: "360px"
       },
       { 
         titre: "GIF - Animation 3D", 
         type: "photo", 
         url: "/images/Ecran_attente.gif",
-        description: "Petit projet personnel, ce que vous voyez actuellement est une animation créée en totalité sous Blender et qui me sert d'écran d'attente sur ma chaîne Twitch.\nJe peux également intégrer des éléments en 3D dans mes vidéos, comme le logo du Poitou Bière Festival que vous pouvez voir au début de la vidéo\naccessible via la liste déroulante",
+        description: "Petit projet personnel, ce que vous voyez actuellement est une animation créée en totalité sous Blender et qui me sert d'écran d'attente sur ma chaîne Twitch. Je peux également intégrer des éléments en 3D dans mes vidéos, comme le logo du Poitou Bière Festival que vous pouvez voir au début de la vidéo accessible via la liste déroulante",
         width: "784px",
         height: "360px"
       },
@@ -92,8 +81,8 @@ const Experience = () => {
           "/images/halloween_2023/Halloween4.jpg",
         ],
         description: "La vidéo étant l'art de manier les images et de les animer, il est aussi intéressant de savoir manier l'art de l'image fixe. C'est pourquoi je m'adonne parfois à la photographie.",
-        width: "500px",
-        height: "360px"
+        width: "400px",
+        height: "288px"
       }
     ]
   };
@@ -108,23 +97,23 @@ const Experience = () => {
   return (
     <motion.section
       id="experience"
-      className="w-full min-h-screen flex items-center justify-center bg-brun-terreux/20 text-blanc-casse "
+      className="w-full min-h-screen flex items-center justify-center bg-brun-terreux/5 text-blanc-casse "
     >
-      <div className="ablsolute min-h-screen min-w-screen flex flex-col items-center justify-center text-white">
-        <h1 className="text-4xl font-bold mb-6">Expérience</h1>
+      <div className="w-full max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-6 max-h-[90vh] overflow-auto">
+        <h1 className="text-4xl font-bold mb-6 flex items-center justify-center">Expériences</h1>
 
         {/* Boutons des catégories */}
         <div className="flex gap-8 mb-8">
           {["formations", "informatique", "audiovisuel"].map((category) => (
             <div
               key={category}
-              className={`text-2xl font-semibold px-6 py-3 rounded cursor-pointer transition duration-300 
+              className={`text-2xl font-semibold px-6 py-3 rounded cursor-pointer transition duration-300 flex text-center justify-center
                           ${selectedCategory === category ? "bg-yellow-500 text-gray-900" : "bg-gray-800 hover:bg-yellow-400"}`}
               onClick={() => changeCategory(category)} // 💡 Clic au lieu du survol
             >
               {category === "formations" && "📚 Formations"}
-              {category === "informatique" && "💻 Expériences Informatique"}
-              {category === "audiovisuel" && "🎬 Expériences Audiovisuel"}
+              {category === "informatique" && "💻 Expériences Informatiques"}
+              {category === "audiovisuel" && "🎬 Expériences Audiovisuelles"}
             </div>
           ))}
         </div>
@@ -138,7 +127,7 @@ const Experience = () => {
             exit={{ x: -100, opacity: 0 }} // Disparition vers l'extérieur
             transition={{ duration: 0.4, ease: "easeInOut" }}
           >
-            <div className="min-w-screen p-6 bg-gray-900 rounded-lg shadow-lg min-h-[200px] transition-all duration-500">
+            <div className=" max-h-screen min-w-screen p-6 bg-gray-900 rounded-lg shadow-lg min-h-[200px] transition-all duration-500 overflow-auto">
 
               {selectedCategory === "audiovisuel" ? (
                 <div>

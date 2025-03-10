@@ -1,20 +1,4 @@
-/*function Skills() {
-  return (
-    <div className="p-8 bg-white shadow-md rounded-lg m-6">
-      <h2 className="text-2xl font-semibold text-blue-600">Mes compétences</h2>
-      <ul className="mt-4 space-y-2">
-        <li className="text-gray-700">✅ JavaScript</li>
-        <li className="text-gray-700">✅ React</li>
-        <li className="text-gray-700">✅ Node.js</li>
-        <li className="text-gray-700">✅ Base de données</li>
-      </ul>
-    </div>
-  );
-}
-
-export default Skills;*/
-
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 
 const skills = [
@@ -72,42 +56,29 @@ const skills = [
 ];
 
 const Skills = () => {
-  /*const [time, setTime] = useState(0);
+  const [activeSkill, setActiveSkill] = useState(null);
+  const [radius, setRadius] = useState(360); // ✅ Rayon par défaut
 
   useEffect(() => {
-    const interval = setInterval(() => {
-      setTime((prevTime) => prevTime + 0.02); // ✅ Incrémente le temps toutes les 100ms
-    }, 20);
+    const updateRadius = () => {
+      const newRadius = Math.min(window.innerHeight*0.4, 360); // ✅ Ajuste le rayon selon l’écran
+      setRadius(newRadius);
+    };
 
-    return () => clearInterval(interval); // ✅ Nettoie l'intervalle au démontage
-  }, []);*/
+    updateRadius(); // ✅ Appliquer dès le premier rendu
+    window.addEventListener("resize", updateRadius); // ✅ Mettre à jour quand la fenêtre change
 
-  const [activeSkill, setActiveSkill] = useState(null);
+    return () => window.removeEventListener("resize", updateRadius);
+  }, []);
 
   return (
-    <motion.section
-      id="skills"
-      //className="w-full min-h-screen flex items-center justify-center /*bg-gray-200*/ bg-gray-200/20"
-      /*initial={{ opacity: 0, y: 50 }} // Départ invisible et en bas
-      animate={{ opacity: 1, y: 0 }} // Apparition et montée
-      exit={{ opacity: 0, y: -50 }}
-      transition={{ duration: 1, ease: "easeOut" }} // Animation fluide*/
-    >
-      {/*<div className="text-center text-blanc-casse">
-        <h2 className="text-4xl font-bold mb-4">Compétences</h2>
-        <ul className="mt-4 space-y-2">
-          <li className>✅ JavaScript</li>
-          <li className>✅ React</li>
-          <li className>✅ Node.js</li>
-          <li className>✅ Base de données</li>
-        </ul>
-      </div>*/}
+    <motion.section id="skills">
 
-      <div className="relative w-[900px] h-[900px] mx-auto rounded-full animate-[rotateEllipse_100s_linear_infinite] mt-12">
+      <div className="relative w-[700px] 2xl:w-[900px] h-[700px] 2xl:h-[900px] mx-auto rounded-full animate-[rotateEllipse_100s_linear_infinite] mt-12">
         {/* Texte explicatif au centre */}
-        <div className="absolute w-[900px] h-[900px] rounded-full blur-2xl bg-gray-500/40 center"></div>
+        <div className="absolute w-[700px] 2xl:w-[900px] h-[700px] 2xl:h-[900px] rounded-full blur-2xl bg-gray-500/40 center"></div>
         <div className="absolute inset-0 flex items-center justify-center animate-[rotateSkill_100s_linear_infinite]">
-          <div className="w-[600px] h-[600px] rounded-full flex items-center justify-center p-4">
+          <div className="w-[500px] 2xl:w-[600px] h-[550px] 2xl:h-[600px] rounded-full flex items-center justify-center p-4">
             <div className="max-h-[300px] overflow-auto text-black text-lg font-bold text-center">
               {activeSkill ? activeSkill.description : "Survolez un logo"}
             </div>
@@ -115,17 +86,15 @@ const Skills = () => {
         </div>
         {skills.map((skill, index) => {
           const angle = (index / skills.length) * 2 * Math.PI;
-          const x = 360 * Math.cos(angle); // Rayon du cercle
-          const y = 360 * Math.sin(angle);
+          const x = radius * Math.cos(angle); // Rayon du cercle
+          const y = radius * Math.sin(angle);
           
           return (
             <div
               key={index}
               className="absolute animate-[rotateSkill_100s_linear_infinite]"
               style={{
-                //left: `calc(46% + ${(x*((Math.cos(time/20*4*Math.PI)/4)+0.75))-(y*((Math.sin(time/20*4*Math.PI)/2)))}px)`,
                 left: `calc(46% + ${x}px)`,
-                //top: `calc(46% + ${y*((-Math.cos(time/20*4*Math.PI)/2)+1.5)-(x*((Math.cos(time/20*4*Math.PI)/4)))}px)`,
                 top: `calc(46% + ${y}px)`,
                 transform: "translate(-50%, -50%)",
               }}
@@ -134,7 +103,7 @@ const Skills = () => {
               <img 
                 src={skill.logo} 
                 alt={skill.name} 
-                className={`w-20 h-20 transform transition-transform duration-300 hover:scale-125 hover:invert" ${
+                className={`w-16 h-16 transform transition-transform duration-300 hover:scale-125 hover:invert" ${
                   activeSkill?.name === skill.name 
                     ? "scale-125 invert" 
                     : "scale-100 invert-0"

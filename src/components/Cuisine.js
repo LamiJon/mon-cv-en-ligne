@@ -1,46 +1,3 @@
-/*import React, { useState, useEffect } from "react";
-
-const Cuisine = () => {
-  const [videoURL, setVideoURL] = useState("");
-
-  useEffect(() => {
-    fetch("http://localhost:5000/api/whoogys")
-      .then((response) => response.json())
-      .then((data) => {
-        if (data.videoURL) {
-          setVideoURL(data.videoURL);
-        }
-      })
-      .catch((error) => console.error("Erreur de chargement de la vidéo :", error));
-  }, []);
-
-  return (
-    <div className="min-h-screen flex flex-col items-center justify-center text-white">
-      <h1 className="text-4xl font-bold mb-6">Dernière vidéo de Whoogys 🍳</h1>
-      <p className="text-lg text-center max-w-2xl mb-4">
-        J’adore cette chaîne car elle propose des recettes accessibles et bien expliquées. 
-        Chaque vidéo est un plaisir à regarder et m'inspire à essayer de nouvelles choses en cuisine !
-      </p>
-      {videoURL ? (
-        <iframe
-          width="896"
-          height="504"
-          src={videoURL.replace("watch?v=", "embed/")}
-          title="Vidéo Whoogys"
-          frameBorder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowFullScreen
-        ></iframe>
-      ) : (
-        <p>Chargement de la vidéo...</p>
-      )}
-    </div>
-    
-  );
-};
-
-export default Cuisine;*/
-
 import React, { useState, useEffect } from "react";
 
 const Cuisine = () => {
@@ -94,7 +51,10 @@ const Cuisine = () => {
             </div>
           ))
         ) : (
-          <p>Chargement des vidéos...</p>
+          <div className="flex flex-col items-center justify-center">
+            <p>Chargement des vidéos...</p>
+            <div className="loader pt-6 mx-4"></div>
+          </div>
         )}
       </div>
     </div>

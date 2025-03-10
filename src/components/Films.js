@@ -1,7 +1,6 @@
 import React, { useEffect, useState, useRef } from "react";
 import { fetchFilms } from "../utils/letterboxdScraper";
 import { fetchSynopsis } from "../utils/letterboxdScraper";
-//import Navbar from "./Navbar"; // Assure-toi que le chemin est correct
 
 const Films = () => {
   const [films, setFilms] = useState([]);
@@ -9,19 +8,18 @@ const Films = () => {
   const [sortOption, setSortOption] = useState("sortie"); // Option de tri sélectionnée
   const [isLoading, setIsLoading] = useState(false);
   const [hoveredSynopsis, setHoveredSynopsis] = useState("");
-  //const [synopsisIsLoading, setSynopsisIsLoading] = useState(false);
-  //const [isHovered, setIsHovered] = useState(false);
+  const [synopsisIsLoading, setSynopsisIsLoading] = useState(false);
   const [scrollY, setScrollY] = useState(0);
   const containerRef = useRef(null);
   
   const handleHover = async (filmHref) => {
     if (!filmHref) return;
-    //setSynopsisIsLoading(true); // ✅ Active la roue de chargement
     setHoveredSynopsis(""); // ✅ Efface l'ancien synopsis
+    setSynopsisIsLoading(true); // ✅ Active la roue de chargement
     const synopsis = await fetchSynopsis(filmHref);
     //console.log("Synopsis récupéré :", synopsis);
+    setSynopsisIsLoading(false); // ✅ Désactive la roue de chargement
     setHoveredSynopsis(synopsis);
-    setIsLoading(false); // ✅ Désactive la roue de chargement
   };
 
   useEffect(() => {
@@ -59,8 +57,8 @@ const Films = () => {
 
   return (
     <div ref={containerRef} className="h-screen overflow-y-auto scroll-container relative">
-      <div ref={containerRef}
-        className="fixed top-0 left-0 w-full h-full bg-cover bg-center bg-[auto_100vh] translate-y-[-50px] scale-110 z-[-1]"
+      <div
+        className="fixed top-0 left-0 w-full h-full bg-cover bg-center bg-[auto_100vh] translate-y-[-50px] scale-110 z-[-1] blur-sm"
         style={{
           backgroundImage: "url('/background_films.JPG')",
           backgroundRepeat: "no-repeat",
@@ -68,18 +66,9 @@ const Films = () => {
           backgroundPosition: `center ${scrollY * -0.064}px`, // Appliquer l'effet Parallax ici
         }}
       />
+      <div classname="w-full h-full justify-center bg-bleu-nuit"/>
       <div className="min-h-screen flex flex-col items-center text-white pt-20">
         <h2 className="text-4xl font-bold mb-4 text-outline">Les films que j’ai vus 🎬</h2>
-        {/*<button
-          onClick={() => {
-            window.location.href = "/";
-            setPage(1); // ✅ Réinitialise la page
-            setFilms([]);
-          }}
-          className="px-4 py-2 bg-blue-500 hover:bg-blue-700 text-white font-bold rounded transition"
-        >
-          Retour à l'accueil
-        </button>*/}
 
         <div className="px-6 py-3 size-fit rounded bg-black/40 center">
 
@@ -126,6 +115,7 @@ const Films = () => {
         {/* Section du synopsis */}
         <div className="w-1/4 p-4 bg-gray-900/80 rounded text-white fixed right-20 top-80 flex items-center">
           <p className="text-lg">{hoveredSynopsis || "Survolez une affiche pour voir le synopsis."}</p>
+          {synopsisIsLoading && <div className="loader pt-6 mx-4"></div>} {/*Roue de chargement*/}
         </div>
 
         {isLoading && <div className="loader pt-8 mt-4"></div>} {/*Roue de chargement*/}

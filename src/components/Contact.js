@@ -1,39 +1,3 @@
-/*function Contact() {
-  return (
-    <div className="p-8 bg-white shadow-md rounded-lg m-6">
-      <h2 className="text-2xl font-semibold text-blue-600">Contact</h2>
-      <p className="mt-2 text-gray-700">📧 Email : monemail@example.com</p>
-      <p className="mt-2 text-gray-700">🔗 LinkedIn : linkedin.com/in/monprofil</p>
-    </div>
-  );
-}
-
-export default Contact;*/
-
-/*import { motion } from "framer-motion";
-
-const Contact = () => {
-
-  return (
-    <motion.section
-      id="contact"
-      className="min-h-screen flex items-center justify-center bg-gris-acier/50"
-      initial={{ opacity: 0, y: 50 }} // Départ invisible et en bas
-      animate={{ opacity: 1, y: 0 }} // Apparition et montée
-      exit={{ opacity: 0, y: -50 }}
-      transition={{ duration: 1, ease: "easeOut" }} // Animation fluide
-    >
-      <div className="text-center">
-        <h2 className="text-4xl font-bold mb-4">Contact</h2>
-        <p className>📧 Email : monemail@example.com</p>
-        <p className>🔗 LinkedIn : linkedin.com/in/monprofil</p>
-      </div>
-    </motion.section>
-  );
-};
-
-export default Contact;*/
-
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import emailjs from "@emailjs/browser";
