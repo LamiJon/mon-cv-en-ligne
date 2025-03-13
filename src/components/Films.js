@@ -66,7 +66,7 @@ const Films = () => {
           backgroundPosition: `center ${scrollY * -0.064}px`, // Appliquer l'effet Parallax ici
         }}
       />
-      <div classname="w-full h-full justify-center bg-bleu-nuit"/>
+
       <div className="min-h-screen flex flex-col items-center text-white pt-20">
         <h2 className="text-4xl font-bold mb-4 text-outline">Les films que j’ai vus 🎬</h2>
 
@@ -97,7 +97,7 @@ const Films = () => {
         <div className="grid grid-cols-3 gap-4 pt-4">
           {films.length > 0 ? (
             films.map((film, index) => (
-              <div key={index} className="flex flex-col items-center text-center">
+              <div key={index} className="flex flex-col items-center text-center w-[200px]">
                 <img
                   src={film.image}
                   alt={film.title}

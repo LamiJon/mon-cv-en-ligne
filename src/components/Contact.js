@@ -41,7 +41,6 @@ const Contact = () => {
   return (
     <section id="contact" className="w-full min-h-screen flex flex-col justify-center items-center bg-bleu-nuit/30 px-4">
       <h2 className="text-3xl font-bold mb-6">Me Contacter</h2>
-
       <form
         onSubmit={handleSubmit(onSubmit)}
         className="w-full max-w-lg bg-brun-terreux/50 p-6 rounded-lg shadow-lg"
@@ -97,7 +96,6 @@ const Contact = () => {
           ✅ Votre message a bien été envoyé !
         </div>
       )}
-
     </section>
   );
 };
