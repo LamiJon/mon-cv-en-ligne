@@ -26,27 +26,27 @@ const Experience = () => {
       { titre: "Employé polyvalent", 
         entreprise: "Escape Yourself Poitiers", 
         annee: " Du 06/2024 au 01/2025", 
-        description: "Accompagner les clients dans tout le processus d'une partie de jeu d'évasion gradeur nature.\nDévellopement relationnel client/communication." 
+        description: "En tant qu'auto-entrepreneur dans un Escape Game, j’ai accompagné les clients tout au long de leur expérience, de l’accueil jusqu’au débriefing. Mes missions incluaient la gestion des réservations, l’encaissement, l’explication des règles du jeu, la supervision des parties et la préparation des salles. Mon objectif principal était d’assurer une expérience immersive et mémorable aux joueurs. Cette expérience m’a permis de développer mes compétences relationnelles et mon sens du service client, tout en travaillant en équipe dans un environnement dynamique.\nCompétences acquises : Service client & travail en équipe" 
       },
       { titre: "Vidéaste", 
         entreprise: "JonProduction (Auto-Entreprose)", 
         annee: "Du 07/2023 (toujours actif)", 
-        description: "Accompagner les clients dans la promotions de leur service grâce à la vidéo.\nApprendre des nouvelles compétences." 
+        description: "J’accompagne mes clients dans la promotion de leurs services grâce à la vidéo, en réalisant notamment des contenus courts pour les réseaux sociaux. Je prends en charge le cadrage, le tournage et la post-production, en utilisant DaVinci Resolve pour le montage et l’étalonnage. Cette activité m’a permis de développer un œil artistique et une maîtrise des techniques de montage et d’étalonnage, tout en gérant des projets de manière autonome.\nCompétences acquises : Autonomie & créativité" 
       },
       { titre: "Ingénieur d'étude", 
         entreprise: "ALTEN", 
         annee: "Du 07/2019 au 04/2021", 
-        description: "En mission à SAFRAN Electronics & Defense pour le développement de logiciels pour bancs de maintenance optronique." 
+        description: "Ma mission consistait à développer et améliorer des logiciels pour les bancs de maintenance optronique, notamment pour l’évaluation et le calibrage de jumelles infrarouges et de caméras embarquées. J’ai conçu et intégré des séquences de test destinées à des bancs utilisés en Inde et au Danemark. J’ai travaillé avec TestStand, C++, SVN et SQL, en analysant et en adaptant du code existant tout en rédigeant des documents techniques (fiches de livraison, manuels d’utilisation). Cette mission m’a appris à m’adapter à des environnements industriels exigeants et à rédiger une documentation claire et précise.\nCompétences acquises : Développement logiciel & tests industriels" 
       },
       { titre: "Ingénieur hospitalier", 
         entreprise: "CHU de Poitiers, Secteur Informatique", 
         annee: "Du 10/2017 au 07/2018", 
-        description: "Retranscrire les formulaires de santé en format papier vers un format web sur l’intranet du site.\nFamiliarisation au domaine hospitalier, Rencontre avec des professionnels de santé, Etudier les besoins, Superviser les phases de test." 
+        description: "Au sein du CHU de Poitiers, j’étais en charge de la gestion des données hospitalières. Mon travail consistait à transcrire des formulaires papier en formulaires numériques pour leur Intranet, en collaborant avec des professionnels de santé pour garantir la précision des données. J’ai notamment travaillé sur des formulaires en allergologie, cancérologie et gérontologie. J’ai utilisé C# pour le backend et un outil interne pour le frontend, ainsi que SQL pour la gestion des bases de données. Cette expérience m’a permis de développer mes compétences en analyse de données, en collaboration interdisciplinaire et en structuration d’applications web dédiées au secteur médical.\nCompétences acquises : Gestion de données & collaboration interdisciplinaire" 
       },
       { titre: "Ingénieur informaticien", 
         entreprise: "Université de Poitiers, Secteur Informatique", 
         annee: "Du 01/2016 au 06/2016", 
-        description: "Développement d’une application sous Android.\nSaisie de dossier, Concevoir un cahier des charges, Superviser le projet." 
+        description: "Ma mission principale était le développement d’une application Android, impliquant la conception et l’implémentation de fonctionnalités adaptées aux besoins utilisateurs. Ce projet m’a permis de renforcer mes compétences en développement mobile, en gestion de projet et en optimisation des performances sur un environnement Android.\nCompétences acquises : Développement mobile & optimisation" 
       }
     ],
     audiovisuel: [
