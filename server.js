@@ -5,7 +5,11 @@ const cors = require("cors");
 const presentations = require("./presentations");
 
 const app = express();
-app.use(cors());
+app.use(cors({
+  origin: "https://jonathanbrachetcv.vercel.app", // ✅ Autorise uniquement Vercel
+  methods: "GET,POST",
+  allowedHeaders: "Content-Type"
+}));
 
 const PORT = 5000;
 
