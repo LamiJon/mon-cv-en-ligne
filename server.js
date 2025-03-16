@@ -1,8 +1,17 @@
 const translate = require("google-translate-api-x");
 const express = require("express");
-const puppeteer = require("puppeteer-core");
 const cors = require("cors");
 const presentations = require("./presentations");
+const { execSync } = require("child_process");
+
+// 📌 Installe Google Chrome si absent
+console.log("🚀 Installation de Google Chrome...");
+execSync("apt-get update && apt-get install -y wget unzip");
+execSync("wget -q https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb");
+execSync("dpkg -i google-chrome-stable_current_amd64.deb || apt-get -fy install");
+console.log("✅ Google Chrome installé !");
+
+const puppeteer = require("puppeteer-core");
 
 const app = express();
 /*app.use(cors({
