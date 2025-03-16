@@ -42,7 +42,8 @@
     "dev": "concurrently \"yarn start\" \"yarn client\"",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "postinstall": "puppeteer install"
   },
   "eslintConfig": {
     "extends": [
