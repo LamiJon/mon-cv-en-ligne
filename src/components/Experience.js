@@ -237,26 +237,28 @@ const Experience = () => {
                     className="mb-4 text-center relative group"
                     onMouseEnter={() => setHoveredExperience(index)}
                     onMouseLeave={() => setHoveredExperience(null)}
+                    initial={{ height: "auto" }}
+                    animate={{ height: hoveredExperience === index ? "auto" : "auto" }}
+                    transition={{ duration: 0.4, ease: "easeInOut" }}
                   >
                     <h3 className="text-xl font-semibold text-yellow-400 cursor-pointer">{exp.titre}</h3>
                     <p className="text-sm text-gray-400 cursor-pointer">{exp.entreprise} - {exp.annee}</p>
                     {/* Description qui apparaît au survol */}
-                    {hoveredExperience === index && (
-                      <motion.div
-                        initial={{ opacity: 0, y: 10 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        exit={{ opacity: 0, y: 10 }}
-                        transition={{ duration: 0.6 }}
-                        className="p-2 rounded-lg shadow-lg justify-center mx-auto z-10 text-gray-300"
-                      >
-                        {exp.description.split("\n").map((line, index) => (
-                          <React.Fragment key={index}>
-                            {line}
-                            <br />
-                          </React.Fragment>
-                        ))}
-                      </motion.div>
-                    )}
+                    <motion.div
+                      initial={{ opacity: 0, y: -10 }}
+                      animate={{ opacity: hoveredExperience === index ? 1 : 0, y: hoveredExperience === index ? 0 : -10 }}
+                      transition={{ duration: 0.2, ease: "easeOut" }}
+                      className={`overflow-hidden text-gray-300 transition-all duration-1000 ease-in-out ${
+                        hoveredExperience === index ? "max-h-[200px]" : "max-h-0"
+                      }`}
+                    >
+                      {exp.description.split("\n").map((line, index) => (
+                        <React.Fragment key={index}>
+                          {line}
+                          <br />
+                        </React.Fragment>
+                      ))}
+                    </motion.div>
                   </div>
                 ))
               )}
