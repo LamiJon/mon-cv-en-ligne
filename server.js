@@ -17,6 +17,13 @@ app.use(cors({
   allowedHeaders: "Content-Type"
 }));
 
+app.use((req, res, next) => {
+  res.header("Access-Control-Allow-Origin", "*"); // ✅ Autorise toutes les origines temporairement
+  res.header("Access-Control-Allow-Methods", "GET, POST, OPTIONS");
+  res.header("Access-Control-Allow-Headers", "Content-Type");
+  next();
+});
+
 const PORT = 5000;
 
 const translateText = async (text, targetLang = "fr") => {
@@ -189,13 +196,11 @@ app.get("/api/youtube-videos", async (req, res) => {
 
       if (videoURL) {
         results.push({ name: channel.name, videoURL, presentation: presentations[channel.name] || "Pas de présentation disponible." });
-        res.json({ message: "Vidéo récupérée avec succès" });
       } else {
         console.log(`⚠️ Aucune vidéo trouvée pour ${channel.name}`);
       }
     } catch (error) {
       console.error(`❌ Erreur lors du scraping de ${channel.name} :`, error);
-      res.status(500).json({ error: "Impossible de récupérer la vidéo." });
     }
   }
 
