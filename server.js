@@ -5,9 +5,15 @@ const cors = require("cors");
 const presentations = require("./presentations");
 
 const app = express();
-app.use(cors({
+/*app.use(cors({
   origin: "https://jonathanbrachetcv.vercel.app", // ✅ Autorise uniquement Vercel
   methods: "GET,POST",
+  allowedHeaders: "Content-Type"
+}));*/
+
+app.use(cors({
+  origin: "*", // ✅ TEMPORAIRE : Autorise tout le monde (test)
+  methods: "GET, POST, OPTIONS",
   allowedHeaders: "Content-Type"
 }));
 
@@ -183,11 +189,13 @@ app.get("/api/youtube-videos", async (req, res) => {
 
       if (videoURL) {
         results.push({ name: channel.name, videoURL, presentation: presentations[channel.name] || "Pas de présentation disponible." });
+        res.json({ message: "Vidéo récupérée avec succès" });
       } else {
         console.log(`⚠️ Aucune vidéo trouvée pour ${channel.name}`);
       }
     } catch (error) {
       console.error(`❌ Erreur lors du scraping de ${channel.name} :`, error);
+      res.status(500).json({ error: "Impossible de récupérer la vidéo." });
     }
   }
 
