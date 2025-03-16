@@ -6,7 +6,7 @@ const Cuisine = () => {
 
   useEffect(() => {
     //fetch("http://localhost:5000/api/youtube-videos")
-    fetch("http://mon-cv-en-ligne-production.up.railway.app/api/youtube-videos")
+    fetch("https://mon-cv-en-ligne-production.up.railway.app/api/youtube-videos")
       .then((response) => response.json())
       .then((data) => {
         if (Array.isArray(data)) {
