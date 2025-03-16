@@ -11,7 +11,7 @@ execSync("wget -q https://dl.google.com/linux/direct/google-chrome-stable_curren
 execSync("dpkg -i google-chrome-stable_current_amd64.deb || apt-get -fy install");
 console.log("✅ Google Chrome installé !");
 
-const puppeteer = require("puppeteer-core");
+const puppeteer = require("puppeteer");
 
 const app = express();
 /*app.use(cors({
@@ -159,9 +159,14 @@ app.get("/api/youtube-videos", async (req, res) => {
   ];
 
   const browser = await puppeteer.launch({
-    executablePath: "/usr/bin/google-chrome", // ✅ Utilise la version installée sur Railway
-    headless: true, // ✅ Évite l'affichage graphique
-    args: ["--no-sandbox", "--disable-setuid-sandbox"] // ✅ Réduit la consommation mémoire
+    headless: "new",
+    args: [
+      "--no-sandbox",
+      "--disable-setuid-sandbox",
+      "--disable-dev-shm-usage",
+      "--disable-gpu",
+      "--single-process"
+    ]
   });
   /*const browser = await puppeteer.launch({
     headless: false, // ❌ Voir ce que fait Puppeteer
