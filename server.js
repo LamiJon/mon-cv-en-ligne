@@ -150,6 +150,7 @@ app.get("/api/youtube-videos", async (req, res) => {
   ];
 
   const browser = await puppeteer.launch({
+    executablePath: "/usr/bin/google-chrome", // ✅ Utilise la version installée sur Railway
     headless: true, // ✅ Évite l'affichage graphique
     args: ["--no-sandbox", "--disable-setuid-sandbox"] // ✅ Réduit la consommation mémoire
   });
