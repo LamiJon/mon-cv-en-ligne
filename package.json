@@ -37,7 +37,9 @@
     "web-vitals": "^2.1.0"
   },
   "scripts": {
-    "start": "node --max-old-space-size=512 server.js react-scripts start",
+    "start": "node --max-old-space-size=512 server.js",
+    "client": "react-scripts start",
+    "dev": "concurrently \"yarn start\" \"yarn client\"",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
@@ -63,9 +65,10 @@
   "devDependencies": {
     "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
     "autoprefixer": "^10.4.20",
+    "concurrently": "^9.1.2",
     "postcss": "^8.5.2"
   },
   "resolutions": {
-  "@mediapipe/tasks-vision": "0.10.22-rc.20250304"
+    "@mediapipe/tasks-vision": "0.10.22-rc.20250304"
   }
 }

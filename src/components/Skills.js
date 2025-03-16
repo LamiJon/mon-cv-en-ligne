@@ -72,8 +72,8 @@ const Skills = () => {
         {/* Texte explicatif au centre */}
         <div className="absolute w-[700px] 2xl:w-[900px] h-[700px] 2xl:h-[900px] rounded-full blur-2xl bg-gray-500/40 center"></div>
         <div className="absolute inset-0 flex items-center justify-center animate-[rotateSkill_100s_linear_infinite]">
-          <div className="w-[500px] 2xl:w-[600px] h-[550px] 2xl:h-[600px] rounded-full flex items-center justify-center p-4">
-            <div className="max-h-[300px] overflow-auto text-black text-lg font-bold text-center">
+          <div className="w-[480px] xl:w-[500px] 2xl:w-[520px] rounded-full flex items-center justify-center p-4">
+            <div className="max-h-[270px] overflow-auto text-black text-lg font-bold text-center">
               {activeSkill ? activeSkill.description : "Survolez un logo"}
             </div>
           </div>

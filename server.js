@@ -44,10 +44,11 @@ app.get("/api/films", async (req, res) => {
 
     console.log(`Chargement des films depuis : ${LETTERBOXD_URL} (Page ${page})`);
 
-    const browser = await puppeteer.launch({
+    const browser = await puppeteer.launch({ headless: "new" });
+    /*const browser = await puppeteer.launch({
       headless: true, // ✅ Évite l'affichage graphique
       args: ["--no-sandbox", "--disable-setuid-sandbox"] // ✅ Réduit la consommation mémoire
-    });
+    });*/
     const pageInstance = await browser.newPage();
     await pageInstance.goto(LETTERBOXD_URL, { waitUntil: "networkidle2" });
 
@@ -75,7 +76,7 @@ app.get("/api/films", async (req, res) => {
     }, startIndex, endIndex);
 
     console.log("Films extraits :", films);
-    await page.close();
+    //await page.close();
     await browser.close();
     res.json(films);
   } catch (error) {
@@ -136,13 +137,12 @@ app.get("/api/youtube-videos", async (req, res) => {
     headless: false, // ❌ Voir ce que fait Puppeteer
     args: ["--no-sandbox", "--disable-setuid-sandbox"],
   });*/
+  const page = await browser.newPage();
   const results = [];
 
   for (const channel of channels) {
-    const page = await browser.newPage();
-    console.log(`Scraping de la chaîne : ${channel.name}`);
-
     try {
+      console.log(`Scraping de la chaîne : ${channel.name}`);
       await page.goto(channel.url, { waitUntil: "domcontentloaded" });
 
       // ✅ Attendre un court instant pour que la page charge bien
@@ -182,13 +182,12 @@ app.get("/api/youtube-videos", async (req, res) => {
       } else {
         console.log(`⚠️ Aucune vidéo trouvée pour ${channel.name}`);
       }
-
-      await page.close();
     } catch (error) {
       console.error(`❌ Erreur lors du scraping de ${channel.name} :`, error);
     }
   }
 
+  await page.close();
   await browser.close();
 
   if (results.length === 0) {
