@@ -222,4 +222,4 @@ app._router.stack.forEach((r) => {
     console.log(`📌 Route active : ${r.route.path}`);
   }
 });
-app.listen(PORT, () => console.log(`Serveur lancé sur http://localhost:${PORT}`));
+//app.listen(PORT, () => console.log(`Serveur lancé sur http://localhost:${PORT}`));
