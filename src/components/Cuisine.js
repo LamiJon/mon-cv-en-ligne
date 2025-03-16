@@ -5,15 +5,15 @@ const Cuisine = () => {
   const [videos, setVideos] = useState([]);
 
   useEffect(() => {
-    //fetch("http://localhost:5000/api/youtube-videos")
-    fetch("https://mon-cv-en-ligne-production.up.railway.app/api/youtube-videos")
+    fetch("http://localhost:5000/api/youtube-videos")
+    /*fetch("https://mon-cv-en-ligne-production.up.railway.app/api/youtube-videos")
       .then((response) => response.json())
       .then((data) => {
         if (Array.isArray(data)) {
           setVideos(data);
         }
       })
-      .catch((error) => console.error("Erreur de chargement des vidéos :", error));
+      .catch((error) => console.error("Erreur de chargement des vidéos :", error));*/
   }, []);
 
   return (

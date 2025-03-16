@@ -4,7 +4,7 @@ const cors = require("cors");
 const presentations = require("./presentations");
 const puppeteer = require("puppeteer");
 
-(async () => {
+/*(async () => {
   try {
     console.log("🚀 Test Puppeteer en mode Headless Shell...");
     const browser = await puppeteer.launch({
@@ -21,7 +21,7 @@ const puppeteer = require("puppeteer");
 })();
 
 console.log("📥 Téléchargement de Chromium...");
-console.log("📍 Chromium path :", puppeteer.executablePath());
+console.log("📍 Chromium path :", puppeteer.executablePath());*/
 
 const app = express();
 /*app.use(cors({
@@ -43,8 +43,8 @@ app.use((req, res, next) => {
   next();
 });
 
-//const PORT = 5000;
-const PORT = process.env.PORT || 8080; // ✅ Railway définit le port automatiquement
+const PORT = 5000;
+//const PORT = process.env.PORT || 8080; // ✅ Railway définit le port automatiquement
 app.listen(PORT, () => console.log(`🚀 Serveur lancé sur le port ${PORT}`));
 
 
