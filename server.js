@@ -24,7 +24,7 @@ app.use((req, res, next) => {
   next();
 });
 
-const PORT = 5000;
+const PORT = process.env.PORT || 5000;
 
 const translateText = async (text, targetLang = "fr") => {
   try {
@@ -214,4 +214,9 @@ app.get("/api/youtube-videos", async (req, res) => {
   res.json(results);
 });
 
+app._router.stack.forEach((r) => {
+  if (r.route && r.route.path) {
+    console.log(`📌 Route active : ${r.route.path}`);
+  }
+});
 app.listen(PORT, () => console.log(`Serveur lancé sur http://localhost:${PORT}`));
