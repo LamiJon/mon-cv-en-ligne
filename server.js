@@ -24,7 +24,10 @@ app.use((req, res, next) => {
   next();
 });
 
-const PORT = process.env.PORT || 5000;
+//const PORT = 5000;
+const PORT = process.env.PORT || 8080; // ✅ Railway définit le port automatiquement
+app.listen(PORT, () => console.log(`🚀 Serveur lancé sur le port ${PORT}`));
+
 
 const translateText = async (text, targetLang = "fr") => {
   try {
