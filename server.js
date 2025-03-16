@@ -44,7 +44,10 @@ app.get("/api/films", async (req, res) => {
 
     console.log(`Chargement des films depuis : ${LETTERBOXD_URL} (Page ${page})`);
 
-    const browser = await puppeteer.launch({ headless: "new" });
+    const browser = await puppeteer.launch({
+      headless: true, // ✅ Évite l'affichage graphique
+      args: ["--no-sandbox", "--disable-setuid-sandbox"] // ✅ Réduit la consommation mémoire
+    });
     const pageInstance = await browser.newPage();
     await pageInstance.goto(LETTERBOXD_URL, { waitUntil: "networkidle2" });
 
@@ -72,6 +75,7 @@ app.get("/api/films", async (req, res) => {
     }, startIndex, endIndex);
 
     console.log("Films extraits :", films);
+    await page.close();
     await browser.close();
     res.json(films);
   } catch (error) {
@@ -89,7 +93,10 @@ app.get("/api/synopsis", async (req, res) => {
   const url = `https://letterboxd.com${href}`;
 
   try {
-    const browser = await puppeteer.launch({ headless: "new" });
+    const browser = await puppeteer.launch({
+      headless: true, // ✅ Évite l'affichage graphique
+      args: ["--no-sandbox", "--disable-setuid-sandbox"] // ✅ Réduit la consommation mémoire
+    });
     const page = await browser.newPage();
     await page.goto(url, { waitUntil: "domcontentloaded" });
 
@@ -99,6 +106,7 @@ app.get("/api/synopsis", async (req, res) => {
       return reviewElement ? reviewElement.innerText.trim() : "Synopsis non disponible.";
     });
 
+    await page.close();
     await browser.close();
 
     // ✅ Traduction du synopsis en français
@@ -120,7 +128,10 @@ app.get("/api/youtube-videos", async (req, res) => {
     { name: "Au Bord de l'Assiette", url: "https://www.youtube.com/@auborddelassiette/shorts"}
   ];
 
-  const browser = await puppeteer.launch({ headless: "new" });
+  const browser = await puppeteer.launch({
+    headless: true, // ✅ Évite l'affichage graphique
+    args: ["--no-sandbox", "--disable-setuid-sandbox"] // ✅ Réduit la consommation mémoire
+  });
   /*const browser = await puppeteer.launch({
     headless: false, // ❌ Voir ce que fait Puppeteer
     args: ["--no-sandbox", "--disable-setuid-sandbox"],
