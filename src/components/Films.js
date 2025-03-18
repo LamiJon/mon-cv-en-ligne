@@ -62,7 +62,7 @@ const Films = () => {
       <div className="min-h-screen flex flex-col items-center justify-center text-white text-center">
         <h1 className="text-4xl font-bold mb-4">📽️ Page en maintenance</h1>
         <p className="text-lg">
-          La section "Films" est momentanément indisponible. Elle sera de retour bientôt ! 🚀
+          Cette section est momentanément indisponible. Elle sera de retour bientôt.
         </p>
       </div>
 
