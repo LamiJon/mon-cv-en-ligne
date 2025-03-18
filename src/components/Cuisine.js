@@ -17,6 +17,16 @@ const Cuisine = () => {
 
   return (
     <div className="min-h-screen flex flex-col items-center justify-center text-white pt-[100px]">
+
+      {/*Message indisponible*/}
+      <div className="min-h-screen flex flex-col items-center justify-center text-white text-center">
+        <h1 className="text-4xl font-bold mb-4">🍽️ Page en maintenance</h1>
+        <p className="text-lg">
+          La section "Cuisine" est momentanément indisponible. Revenez plus tard ! 🔥
+        </p>
+      </div>
+
+      <div className="opacity-0"> {/*<- à supprimer lorsque serveur ok */}
       <div
         className="fixed top-0 left-0 w-full h-full bg-cover bg-center bg-[auto_100vh] translate-y-[-50px] scale-110 z-[-1] blur-md"
         style={{
@@ -72,6 +82,7 @@ const Cuisine = () => {
           </div>
         )}
       </div>
+      </div> {/*<- à supprimer lorsque serveur ok */}
     </div>
   );
 };
