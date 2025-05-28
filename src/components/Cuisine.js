@@ -16,7 +16,8 @@ const Cuisine = () => {
   }, []);
 
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center text-white pt-[100px]">
+    <div className="h-screen overflow-y-auto scroll-container relative">{/*<- à supprimer lorsque serveur ok */}
+      {/*<div className="min-h-screen flex flex-col items-center justify-center text-white pt-[100px]">*/}{/*<- à remettre lorsque serveur ok */}
 
       {/*Message indisponible*/}
       <div className="min-h-screen flex flex-col items-center justify-center text-white text-center">
