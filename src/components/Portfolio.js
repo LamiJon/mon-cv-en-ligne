@@ -1,0 +1,314 @@
+import GridMotion from './tailwindEffects/GridMotion';
+import Dock from './tailwindEffects/Dock';
+import { useState } from 'react';
+import { motion, AnimatePresence } from "framer-motion";
+
+const Portfolio = () => {
+  const [showVideo, setShowVideo] = useState(false);
+
+  const items_gridmotion_portrait = [
+    "/images/Portraits/bleu.jpg",
+    "/images/Portraits/blossac.jpg",
+    "/images/Portraits/cafe.jpg",
+    "/images/Portraits/noir.jpg",
+    "/images/Portraits/flims.jpg",
+    "/images/Portraits/pensive.jpg",
+    "/images/Portraits/rouge.jpg",
+    "/images/Portraits/vladi.jpg",
+    "/images/Portraits/vert.jpg",
+    "/images/Portraits/bleu.jpg",
+    "/images/Portraits/blossac.jpg",
+    "/images/Portraits/cafe.jpg",
+    "/images/Portraits/noir.jpg",
+    "/images/Portraits/flims.jpg",
+    "/images/Portraits/pensive.jpg",
+    "/images/Portraits/rouge.jpg",
+    "/images/Portraits/vladi.jpg",
+    "/images/Portraits/vert.jpg",
+    "/images/Portraits/bleu.jpg",
+    "/images/Portraits/blossac.jpg",
+    "/images/Portraits/cafe.jpg",
+    "/images/Portraits/noir.jpg",
+    "/images/Portraits/flims.jpg",
+    "/images/Portraits/pensive.jpg",
+    "/images/Portraits/rouge.jpg",
+    "/images/Portraits/vladi.jpg",
+    "/images/Portraits/vert.jpg",
+    "/images/Portraits/bleu.jpg",
+    "/images/Portraits/blossac.jpg",
+    "/images/Portraits/cafe.jpg",
+    "/images/Portraits/noir.jpg",
+    "/images/Portraits/flims.jpg",
+    "/images/Portraits/pensive.jpg",
+    "/images/Portraits/rouge.jpg",
+    "/images/Portraits/vladi.jpg",
+    "/images/Portraits/vert.jpg",
+    "/images/Portraits/bleu.jpg",
+    "/images/Portraits/blossac.jpg",
+    "/images/Portraits/cafe.jpg",
+    "/images/Portraits/noir.jpg",
+    "/images/Portraits/flims.jpg",
+    "/images/Portraits/pensive.jpg",
+    "/images/Portraits/rouge.jpg",
+    "/images/Portraits/vladi.jpg",
+    "/images/Portraits/vert.jpg",
+  ];
+
+  const items_gridmotion_animaux = [
+    '/images/halloween_2023/Halloween3.jpg',
+    '/images/Animaux/chaton1.jpg',
+    '/images/Animaux/chaton2.jpg',
+    '/images/Animaux/chaton3.jpg',
+    '/images/halloween_2023/Halloween4.jpg',
+    '/images/Animaux/chaton4.jpg',
+    '/images/Animaux/double_expo.jpg',
+    '/images/Animaux/chaton5.jpg',
+    '/images/Animaux/shouken1.jpg',
+    '/images/halloween_2023/Halloween5.jpg',
+    '/images/Animaux/chaton6.jpg',
+    '/images/Animaux/meduse.jpg',
+    '/images/Animaux/shouken2.jpg',
+    '/images/Animaux/chaton7.jpg',
+    '/images/halloween_2023/Halloween6.jpg',
+    '/images/Animaux/chaton8.jpg',
+    '/images/Animaux/poisson.jpg',
+    '/images/halloween_2023/Halloween3.jpg',
+    '/images/Animaux/chaton1.jpg',
+    '/images/Animaux/chaton2.jpg',
+    '/images/Animaux/chaton3.jpg',
+    '/images/halloween_2023/Halloween4.jpg',
+    '/images/Animaux/chaton4.jpg',
+    '/images/Animaux/double_expo.jpg',
+    '/images/Animaux/chaton5.jpg',
+    '/images/Animaux/shouken1.jpg',
+    '/images/halloween_2023/Halloween5.jpg',
+    '/images/Animaux/chaton6.jpg',
+    '/images/Animaux/meduse.jpg',
+    '/images/Animaux/shouken2.jpg',
+    '/images/Animaux/chaton7.jpg',
+    '/images/halloween_2023/Halloween6.jpg',
+    '/images/Animaux/chaton8.jpg',
+    '/images/Animaux/poisson.jpg',
+    '/images/halloween_2023/Halloween3.jpg',
+    '/images/Animaux/chaton1.jpg',
+    '/images/Animaux/chaton2.jpg',
+    '/images/Animaux/chaton3.jpg',
+    '/images/halloween_2023/Halloween4.jpg',
+    '/images/Animaux/chaton4.jpg',
+    '/images/Animaux/double_expo.jpg',
+    '/images/Animaux/chaton5.jpg',
+    '/images/Animaux/shouken1.jpg',
+    '/images/halloween_2023/Halloween5.jpg',
+    '/images/Animaux/chaton6.jpg'
+  ];
+  
+  const items_gridmotion_evenement = [
+    '/images/Evenements/Gamer_Assembly_2022/P1001167.jpg',
+    '/images/Evenements/Gamer_Assembly_2022/P1001174.jpg',
+    '/images/Evenements/Gamer_Assembly_2022/P1001177.jpg',
+    '/images/Evenements/Gamer_Assembly_2022/P1001187.jpg',
+    '/images/Evenements/Gamer_Assembly_2022/P1001192.jpg',
+    '/images/Evenements/Gamer_Assembly_2023/GA2023.jpg',
+    '/images/Evenements/Gamer_Assembly_2023/GA2023_2.jpg',
+    '/images/Evenements/Gamer_Assembly_2023/P1000099.jpg',
+    '/images/Evenements/Gamer_Assembly_2023/P1000859.jpg',
+    '/images/Evenements/Pictasia_2024/P1003714.jpg',
+    '/images/Evenements/Pictasia_2024/P1003748.jpg',
+    '/images/Evenements/Gamer_Assembly_2022/P1001167.jpg',
+    '/images/Evenements/Gamer_Assembly_2022/P1001174.jpg',
+    '/images/Evenements/Gamer_Assembly_2022/P1001177.jpg',
+    '/images/Evenements/Gamer_Assembly_2022/P1001187.jpg',
+    '/images/Evenements/Gamer_Assembly_2022/P1001192.jpg',
+    '/images/Evenements/Gamer_Assembly_2023/GA2023.jpg',
+    '/images/Evenements/Gamer_Assembly_2023/GA2023_2.jpg',
+    '/images/Evenements/Gamer_Assembly_2023/P1000099.jpg',
+    '/images/Evenements/Gamer_Assembly_2023/P1000859.jpg',
+    '/images/Evenements/Pictasia_2024/P1003714.jpg',
+    '/images/Evenements/Pictasia_2024/P1003748.jpg',
+    '/images/Evenements/Gamer_Assembly_2022/P1001167.jpg',
+    '/images/Evenements/Gamer_Assembly_2022/P1001174.jpg',
+    '/images/Evenements/Gamer_Assembly_2022/P1001177.jpg',
+    '/images/Evenements/Gamer_Assembly_2022/P1001187.jpg',
+    '/images/Evenements/Gamer_Assembly_2022/P1001192.jpg',
+    '/images/Evenements/Gamer_Assembly_2023/GA2023.jpg',
+    '/images/Evenements/Gamer_Assembly_2023/GA2023_2.jpg',
+    '/images/Evenements/Gamer_Assembly_2023/P1000099.jpg',
+    '/images/Evenements/Gamer_Assembly_2023/P1000859.jpg',
+    '/images/Evenements/Pictasia_2024/P1003714.jpg',
+    '/images/Evenements/Pictasia_2024/P1003748.jpg',
+    '/images/Evenements/Gamer_Assembly_2022/P1001167.jpg',
+    '/images/Evenements/Gamer_Assembly_2022/P1001174.jpg',
+    '/images/Evenements/Gamer_Assembly_2022/P1001177.jpg',
+    '/images/Evenements/Gamer_Assembly_2022/P1001187.jpg',
+    '/images/Evenements/Gamer_Assembly_2022/P1001192.jpg',
+    '/images/Evenements/Gamer_Assembly_2023/GA2023.jpg',
+    '/images/Evenements/Gamer_Assembly_2023/GA2023_2.jpg',
+    '/images/Evenements/Gamer_Assembly_2023/P1000099.jpg',
+    '/images/Evenements/Gamer_Assembly_2023/P1000859.jpg',
+    '/images/Evenements/Pictasia_2024/P1003714.jpg',
+    '/images/Evenements/Pictasia_2024/P1003748.jpg',
+    '/images/Evenements/Gamer_Assembly_2022/P1001167.jpg',
+    '/images/Evenements/Gamer_Assembly_2022/P1001174.jpg',
+    '/images/Evenements/Gamer_Assembly_2022/P1001177.jpg',
+    '/images/Evenements/Gamer_Assembly_2022/P1001187.jpg',
+    '/images/Evenements/Gamer_Assembly_2022/P1001192.jpg',
+    '/images/Evenements/Gamer_Assembly_2023/GA2023.jpg',
+    '/images/Evenements/Gamer_Assembly_2023/GA2023_2.jpg',
+    '/images/Evenements/Gamer_Assembly_2023/P1000099.jpg',
+    '/images/Evenements/Gamer_Assembly_2023/P1000859.jpg',
+    '/images/Evenements/Pictasia_2024/P1003714.jpg',
+    '/images/Evenements/Pictasia_2024/P1003748.jpg',
+    '/images/Evenements/Gamer_Assembly_2022/P1001167.jpg',
+    '/images/Evenements/Gamer_Assembly_2022/P1001174.jpg',
+    '/images/Evenements/Gamer_Assembly_2022/P1001177.jpg',
+    '/images/Evenements/Gamer_Assembly_2022/P1001187.jpg',
+    '/images/Evenements/Gamer_Assembly_2022/P1001192.jpg',
+    '/images/Evenements/Gamer_Assembly_2023/GA2023.jpg',
+    '/images/Evenements/Gamer_Assembly_2023/GA2023_2.jpg',
+    '/images/Evenements/Gamer_Assembly_2023/P1000099.jpg',
+    '/images/Evenements/Gamer_Assembly_2023/P1000859.jpg',
+    '/images/Evenements/Pictasia_2024/P1003714.jpg',
+    '/images/Evenements/Pictasia_2024/P1003748.jpg',
+    '/images/Evenements/Gamer_Assembly_2022/P1001167.jpg',
+    '/images/Evenements/Gamer_Assembly_2022/P1001174.jpg',
+    '/images/Evenements/Gamer_Assembly_2022/P1001177.jpg',
+    '/images/Evenements/Gamer_Assembly_2022/P1001187.jpg',
+    '/images/Evenements/Gamer_Assembly_2022/P1001192.jpg',
+    '/images/Evenements/Gamer_Assembly_2023/GA2023.jpg',
+    '/images/Evenements/Gamer_Assembly_2023/GA2023_2.jpg',
+    '/images/Evenements/Gamer_Assembly_2023/P1000099.jpg',
+    '/images/Evenements/Gamer_Assembly_2023/P1000859.jpg',
+    '/images/Evenements/Pictasia_2024/P1003714.jpg',
+    '/images/Evenements/Pictasia_2024/P1003748.jpg'
+  ];
+
+  const items_gridmotion_autre = [
+    '/images/Autres/20220805_143131.jpg',
+    '/images/Autres/Chaone.jpg',
+    '/images/Autres/Kim3.jpg',
+    '/images/Autres/P1000205.jpg',
+    '/images/Autres/P1000139.jpg',
+    '/images/Autres/P1001822.jpg',
+    '/images/Autres/tattoo1.png',
+    '/images/Autres/P1000368.jpg',
+    '/images/Autres/P1000386.jpg',
+    '/images/Autres/tattoo2.png',
+    '/images/Autres/P10011562.jpg',
+    '/images/Autres/20220805_154949.jpg',
+    '/images/Autres/P1000369.jpg',
+    '/images/Autres/P1001823.jpg',
+    '/images/Autres/P1000399.jpg',
+    '/images/Autres/P1000392.jpg',
+    '/images/Autres/20220805_143131.jpg',
+    '/images/Autres/Chaone.jpg',
+    '/images/Autres/Kim3.jpg',
+    '/images/Autres/P1000205.jpg',
+    '/images/Autres/P1000139.jpg',
+    '/images/Autres/P1001822.jpg',
+    '/images/Autres/tattoo1.png',
+    '/images/Autres/P1000368.jpg',
+    '/images/Autres/P1000386.jpg',
+    '/images/Autres/tattoo2.png',
+    '/images/Autres/P10011562.jpg',
+    '/images/Autres/20220805_154949.jpg',
+    '/images/Autres/P1000369.jpg',
+    '/images/Autres/P1001823.jpg',
+    '/images/Autres/P1000399.jpg',
+    '/images/Autres/P1000392.jpg',
+    '/images/Autres/20220805_143131.jpg',
+    '/images/Autres/Chaone.jpg',
+    '/images/Autres/Kim3.jpg',
+    '/images/Autres/P1000205.jpg',
+    '/images/Autres/P1000139.jpg',
+    '/images/Autres/P1001822.jpg',
+    '/images/Autres/tattoo1.png',
+    '/images/Autres/P1000368.jpg',
+    '/images/Autres/P1000386.jpg',
+    '/images/Autres/tattoo2.png',
+    '/images/Autres/P10011562.jpg',
+    '/images/Autres/20220805_154949.jpg',
+    '/images/Autres/P1000369.jpg',
+    '/images/Autres/P1001823.jpg',
+    '/images/Autres/P1000399.jpg',
+    '/images/Autres/P1000392.jpg',
+    '/images/Autres/20220805_143131.jpg',
+    '/images/Autres/Chaone.jpg',
+    '/images/Autres/Kim3.jpg',
+    '/images/Autres/P1000205.jpg',
+    '/images/Autres/P1000139.jpg',
+    '/images/Autres/P1001822.jpg',
+    '/images/Autres/tattoo1.png',
+    '/images/Autres/P1000368.jpg',
+    '/images/Autres/P1000386.jpg',
+    '/images/Autres/tattoo2.png',
+    '/images/Autres/P10011562.jpg',
+    '/images/Autres/20220805_154949.jpg',
+    '/images/Autres/P1000369.jpg',
+    '/images/Autres/P1001823.jpg',
+    '/images/Autres/P1000399.jpg',
+    '/images/Autres/P1000392.jpg',
+    '/images/Autres/20220805_143131.jpg',
+    '/images/Autres/Chaone.jpg',
+    '/images/Autres/Kim3.jpg',
+    '/images/Autres/P1000205.jpg',
+    '/images/Autres/P1000139.jpg',
+    '/images/Autres/P1001822.jpg',
+    '/images/Autres/tattoo1.png',
+    '/images/Autres/P1000368.jpg',
+    '/images/Autres/P1000386.jpg',
+    '/images/Autres/tattoo2.png',
+    '/images/Autres/P10011562.jpg',
+    '/images/Autres/20220805_154949.jpg',
+    '/images/Autres/P1000369.jpg',
+  ];
+
+  const [itemsGrid, setItemsGrid] = useState(items_gridmotion_portrait);
+
+  const items_dock = [
+    { icon: <img src="/logos/portrait.png" alt="Portraits" className="w-6 h-6" />, label: 'Portraits', onClick: () => setItemsGrid(items_gridmotion_portrait) },
+    { icon: <img src="/logos/dog.png" alt="Animaux" className="w-5 h-5" />, label: 'Animaux', onClick: () => setItemsGrid(items_gridmotion_animaux) },
+    { icon: <img src="/logos/ticket.png" alt="Evenements" className="w-5 h-6" />, label: 'Evenements', onClick: () => setItemsGrid(items_gridmotion_evenement) },
+    { icon: <img src="/logos/beer.png" alt="PoitouBiereFestival" className="w-5 h-5" />, label: 'Video Poitou Biere Festival', onClick: () => setShowVideo(true) },
+    { icon: <img src="/logos/more.png" alt="Autres" className="w-5 h-5" />, label: 'Autres', onClick: () => setItemsGrid(items_gridmotion_autre) }
+  ];
+
+  return (
+    <div className="h-screen overflow-hidden flex flex-col items-center justify-center relative">
+      <GridMotion items={itemsGrid} />
+
+      <div className="absolute bottom-0 w-full flex justify-center">
+        <Dock
+          className="z-10"
+          items={items_dock}
+          panelHeight={68}
+          baseItemSize={50}
+          magnification={70}
+        />
+        <AnimatePresence>
+          {showVideo && (
+            <motion.div
+              className="fixed top-0 left-0 w-full h-full bg-black bg-opacity-90 flex items-center justify-center z-[999]"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              onClick={() => setShowVideo(false)}
+            >
+              <motion.video
+                src="/videos/PBF2023.mp4"
+                controls
+                autoPlay
+                className="max-w-[90%] max-h-[90%] rounded-lg shadow-xl"
+                initial={{ scale: 0.8 }}
+                animate={{ scale: 1 }}
+                exit={{ scale: 0.8 }}
+                transition={{ duration: 0.3 }}
+              />
+            </motion.div>
+          )}
+        </AnimatePresence>
+      </div>
+    </div>
+  );
+};
+
+export default Portfolio;

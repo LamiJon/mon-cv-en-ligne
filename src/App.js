@@ -8,6 +8,7 @@ import Contact from "./components/Contact";
 import Interets from "./components/Interets";
 import Films from "./components/Films";
 import Cuisine from "./components/Cuisine";
+import Portfolio from "./components/Portfolio";
 import { useLocation } from "react-router-dom";
 import Particles from "./components/tailwindEffects/Particles";
 
@@ -67,7 +68,7 @@ function App() {
 
   return (
     <div ref={containerRef} className="h-screen overflow-y-auto scroll-container relative">
-      <Navbar />
+      {location.pathname !== "/portfolio" && <Navbar />}
       <div 
         className="fixed top-0 left-0 w-full h-full bg-cover translate-y-[-50px] z-[-1] transition-all duration-700 ease-in-out blur-sm"
         style={{
@@ -102,6 +103,7 @@ function App() {
         } />
         <Route path="/films" element={<Films />} />
         <Route path="/cuisine" element={<Cuisine />} />
+        <Route path="/portfolio" element={<Portfolio />} />
       </Routes>
     </div>
   );

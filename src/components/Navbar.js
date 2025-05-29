@@ -1,5 +1,6 @@
 import { FaLinkedin } from "react-icons/fa"; // Importer l'icône LinkedIn
 import { useLocation } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   const location = useLocation(); // ✅ Récupère l'URL actuelle
@@ -38,6 +39,11 @@ const Navbar = () => {
         <li>
           <button className="hover:text-gray-300 transition duration-200" onClick={() => scrollToSection("contact")}>Contact</button>
         </li>
+        {/*<li>
+          <button className="hover:text-gray-300 transition duration-200">
+            <Link to="/portfolio">Portfolio</Link>
+          </button>
+        </li>*/}
       </ul>
 
       <div className="flex items-center space-x-2 flex-1 justify-end">
