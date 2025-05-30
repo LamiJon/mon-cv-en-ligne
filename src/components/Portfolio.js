@@ -7,51 +7,55 @@ const Portfolio = () => {
   const [showVideo, setShowVideo] = useState(false);
 
   const items_gridmotion_portrait = [
-    "/images/Portraits/bleu.jpg",
     "/images/Portraits/blossac.jpg",
-    "/images/Portraits/cafe.JPG",
     "/images/Portraits/noir.jpg",
+    "/images/Portraits/cafe.JPG",
     "/images/Portraits/flims.JPG",
+    "/images/Portraits/bleu.jpg",
     "/images/Portraits/pensive.JPG",
     "/images/Portraits/rouge.jpg",
-    "/images/Portraits/vladi.JPG",
     "/images/Portraits/vert.jpg",
-    "/images/Portraits/bleu.jpg",
+    "/images/Portraits/vladi.JPG",
+
     "/images/Portraits/blossac.jpg",
-    "/images/Portraits/cafe.JPG",
     "/images/Portraits/noir.jpg",
+    "/images/Portraits/cafe.JPG",
     "/images/Portraits/flims.JPG",
+    "/images/Portraits/bleu.jpg",
     "/images/Portraits/pensive.JPG",
     "/images/Portraits/rouge.jpg",
-    "/images/Portraits/vladi.JPG",
     "/images/Portraits/vert.jpg",
-    "/images/Portraits/bleu.jpg",
+    "/images/Portraits/vladi.JPG",
+
     "/images/Portraits/blossac.jpg",
-    "/images/Portraits/cafe.JPG",
     "/images/Portraits/noir.jpg",
+    "/images/Portraits/cafe.JPG",
     "/images/Portraits/flims.JPG",
+    "/images/Portraits/bleu.jpg",
     "/images/Portraits/pensive.JPG",
     "/images/Portraits/rouge.jpg",
-    "/images/Portraits/vladi.JPG",
     "/images/Portraits/vert.jpg",
-    "/images/Portraits/bleu.jpg",
+    "/images/Portraits/vladi.JPG",
+
     "/images/Portraits/blossac.jpg",
-    "/images/Portraits/cafe.JPG",
     "/images/Portraits/noir.jpg",
+    "/images/Portraits/cafe.JPG",
     "/images/Portraits/flims.JPG",
+    "/images/Portraits/bleu.jpg",
     "/images/Portraits/pensive.JPG",
     "/images/Portraits/rouge.jpg",
-    "/images/Portraits/vladi.JPG",
     "/images/Portraits/vert.jpg",
-    "/images/Portraits/bleu.jpg",
+    "/images/Portraits/vladi.JPG",
+
     "/images/Portraits/blossac.jpg",
-    "/images/Portraits/cafe.JPG",
     "/images/Portraits/noir.jpg",
+    "/images/Portraits/cafe.JPG",
     "/images/Portraits/flims.JPG",
+    "/images/Portraits/bleu.jpg",
     "/images/Portraits/pensive.JPG",
     "/images/Portraits/rouge.jpg",
-    "/images/Portraits/vladi.JPG",
     "/images/Portraits/vert.jpg",
+    "/images/Portraits/vladi.JPG",
   ];
 
   const items_gridmotion_animaux = [
@@ -64,6 +68,7 @@ const Portfolio = () => {
     '/images/Animaux/double_expo.JPG',
     '/images/Animaux/chaton5.JPG',
     '/images/Animaux/shouken1.jpg',
+
     '/images/halloween_2023/Halloween5.jpg',
     '/images/Animaux/chaton6.JPG',
     '/images/Animaux/meduse.JPG',
@@ -73,6 +78,7 @@ const Portfolio = () => {
     '/images/Animaux/chaton8.JPG',
     '/images/Animaux/poisson.JPG',
     '/images/halloween_2023/Halloween3.jpg',
+
     '/images/Animaux/chaton1.JPG',
     '/images/Animaux/chaton2.jpg',
     '/images/Animaux/chaton3.JPG',
@@ -82,6 +88,7 @@ const Portfolio = () => {
     '/images/Animaux/chaton5.JPG',
     '/images/Animaux/shouken1.jpg',
     '/images/halloween_2023/Halloween5.jpg',
+
     '/images/Animaux/chaton6.JPG',
     '/images/Animaux/meduse.JPG',
     '/images/Animaux/shouken2.JPG',
@@ -91,6 +98,7 @@ const Portfolio = () => {
     '/images/Animaux/poisson.JPG',
     '/images/halloween_2023/Halloween3.jpg',
     '/images/Animaux/chaton1.JPG',
+
     '/images/Animaux/chaton2.jpg',
     '/images/Animaux/chaton3.JPG',
     '/images/halloween_2023/Halloween4.jpg',
@@ -112,6 +120,7 @@ const Portfolio = () => {
     '/images/Evenements/Gamer_Assembly_2023/GA2023_2.jpg',
     '/images/Evenements/Gamer_Assembly_2023/P1000099.JPG',
     '/images/Evenements/Gamer_Assembly_2023/P1000859.JPG',
+
     '/images/Evenements/Pictasia_2024/P1003714.JPG',
     '/images/Evenements/Pictasia_2024/P1003748.JPG',
     '/images/Evenements/Gamer_Assembly_2022/P1001167.JPG',
@@ -121,6 +130,7 @@ const Portfolio = () => {
     '/images/Evenements/Gamer_Assembly_2022/P1001192.JPG',
     '/images/Evenements/Gamer_Assembly_2023/GA2023.jpg',
     '/images/Evenements/Gamer_Assembly_2023/GA2023_2.jpg',
+
     '/images/Evenements/Gamer_Assembly_2023/P1000099.JPG',
     '/images/Evenements/Gamer_Assembly_2023/P1000859.JPG',
     '/images/Evenements/Pictasia_2024/P1003714.JPG',
@@ -130,6 +140,7 @@ const Portfolio = () => {
     '/images/Evenements/Gamer_Assembly_2022/P1001177.JPG',
     '/images/Evenements/Gamer_Assembly_2022/P1001187.JPG',
     '/images/Evenements/Gamer_Assembly_2022/P1001192.JPG',
+
     '/images/Evenements/Gamer_Assembly_2023/GA2023.jpg',
     '/images/Evenements/Gamer_Assembly_2023/GA2023_2.jpg',
     '/images/Evenements/Gamer_Assembly_2023/P1000099.JPG',
@@ -139,6 +150,7 @@ const Portfolio = () => {
     '/images/Evenements/Gamer_Assembly_2022/P1001167.JPG',
     '/images/Evenements/Gamer_Assembly_2022/P1001174.JPG',
     '/images/Evenements/Gamer_Assembly_2022/P1001177.JPG',
+
     '/images/Evenements/Gamer_Assembly_2022/P1001187.JPG',
     '/images/Evenements/Gamer_Assembly_2022/P1001192.JPG',
     '/images/Evenements/Gamer_Assembly_2023/GA2023.jpg',
@@ -160,6 +172,7 @@ const Portfolio = () => {
     '/images/Autres/tattoo1.png',
     '/images/Autres/P1000368.JPG',
     '/images/Autres/P1000386.JPG',
+
     '/images/Autres/tattoo2.png',
     '/images/Autres/P10011562.JPG',
     '/images/Autres/20220805_154949.jpg',
@@ -169,6 +182,7 @@ const Portfolio = () => {
     '/images/Autres/P1000392.JPG',
     '/images/Autres/20220805_143131.jpg',
     '/images/Autres/Chaone.jpg',
+
     '/images/Autres/Kim3.jpg',
     '/images/Autres/P1000205.JPG',
     '/images/Autres/P1000139.JPG',
@@ -178,6 +192,7 @@ const Portfolio = () => {
     '/images/Autres/P1000386.JPG',
     '/images/Autres/tattoo2.png',
     '/images/Autres/P10011562.JPG',
+
     '/images/Autres/20220805_154949.jpg',
     '/images/Autres/P1000369.JPG',
     '/images/Autres/P1001823.JPG',
@@ -187,6 +202,7 @@ const Portfolio = () => {
     '/images/Autres/Chaone.jpg',
     '/images/Autres/Kim3.jpg',
     '/images/Autres/P1000205.JPG',
+
     '/images/Autres/P1000139.JPG',
     '/images/Autres/P1001822.JPG',
     '/images/Autres/tattoo1.png',
