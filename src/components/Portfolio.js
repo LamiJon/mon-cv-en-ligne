@@ -67,7 +67,7 @@ const Portfolio = () => {
     '/images/halloween_2023/Halloween5.jpg',
     '/images/Animaux/chaton6.JPG',
     '/images/Animaux/meduse.JPG',
-    '/images/Animaux/shouken2.jpJPGg',
+    '/images/Animaux/shouken2.JPG',
     '/images/Animaux/chaton7.jpg',
     '/images/halloween_2023/Halloween6.jpg',
     '/images/Animaux/chaton8.JPG',
