@@ -98,6 +98,16 @@ const Portfolio = () => {
     '/images/Animaux/shouken1.jpg',
     '/images/Animaux/chaton8.JPG',
     '/images/halloween_2023/Halloween5.jpg',
+
+    '/images/Animaux/chaton3.JPG',
+    '/images/Animaux/meduse.JPG',
+    '/images/Animaux/chaton1.JPG',
+    '/images/halloween_2023/Halloween3.jpg',
+    '/images/Animaux/chaton2.jpg',
+    '/images/Animaux/double_expo.JPG',
+    '/images/Animaux/shouken1.jpg',
+    '/images/Animaux/chaton8.JPG',
+    '/images/halloween_2023/Halloween5.jpg',
   ];
   
   const items_gridmotion_evenement = [
