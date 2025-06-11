@@ -44,7 +44,10 @@ app.get("/api/films", async (req, res) => {
 
     console.log(`Chargement des films depuis : ${LETTERBOXD_URL} (Page ${page})`);
 
-    const browser = await puppeteer.launch({ headless: "new" });
+    const browser = await puppeteer.launch({
+      headless: "new",
+      args: ['--no-sandbox', '--disable-setuid-sandbox'],
+    });
     /*const browser = await puppeteer.launch({
       headless: true, // ✅ Évite l'affichage graphique
       args: ["--no-sandbox", "--disable-setuid-sandbox"] // ✅ Réduit la consommation mémoire
