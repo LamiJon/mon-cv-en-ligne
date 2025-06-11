@@ -46,6 +46,7 @@ app.get("/api/films", async (req, res) => {
 
     const browser = await puppeteer.launch({
       headless: true, // ✅ Évite l'affichage graphique
+      executablePath: "/home/jon/chromium/chrome-linux/chrome",
       args: ["--no-sandbox", "--disable-setuid-sandbox"] // ✅ Réduit la consommation mémoire
     });
 
@@ -96,6 +97,7 @@ app.get("/api/synopsis", async (req, res) => {
   try {
     const browser = await puppeteer.launch({
       headless: true, // ✅ Évite l'affichage graphique
+      executablePath: "/home/jon/chromium/chrome-linux/chrome",
       args: ["--no-sandbox", "--disable-setuid-sandbox"] // ✅ Réduit la consommation mémoire
     });
 
@@ -132,6 +134,7 @@ app.get("/api/youtube-videos", async (req, res) => {
 
   const browser = await puppeteer.launch({
     headless: true, // ✅ Évite l'affichage graphique, false pour voir ce que fait Puppepeteer
+    executablePath: "/home/jon/chromium/chrome-linux/chrome",
     args: ["--no-sandbox", "--disable-setuid-sandbox"] // ✅ Réduit la consommation mémoire
   });
 
