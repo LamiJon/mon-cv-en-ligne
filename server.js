@@ -45,13 +45,10 @@ app.get("/api/films", async (req, res) => {
     console.log(`Chargement des films depuis : ${LETTERBOXD_URL} (Page ${page})`);
 
     const browser = await puppeteer.launch({
-      headless: "new",
-      args: ['--no-sandbox', '--disable-setuid-sandbox'],
-    });
-    /*const browser = await puppeteer.launch({
       headless: true, // ✅ Évite l'affichage graphique
       args: ["--no-sandbox", "--disable-setuid-sandbox"] // ✅ Réduit la consommation mémoire
-    });*/
+    });
+
     const pageInstance = await browser.newPage();
     await pageInstance.goto(LETTERBOXD_URL, { waitUntil: "networkidle2" });
 
@@ -101,6 +98,7 @@ app.get("/api/synopsis", async (req, res) => {
       headless: true, // ✅ Évite l'affichage graphique
       args: ["--no-sandbox", "--disable-setuid-sandbox"] // ✅ Réduit la consommation mémoire
     });
+
     const page = await browser.newPage();
     await page.goto(url, { waitUntil: "domcontentloaded" });
 
@@ -133,13 +131,10 @@ app.get("/api/youtube-videos", async (req, res) => {
   ];
 
   const browser = await puppeteer.launch({
-    headless: true, // ✅ Évite l'affichage graphique
+    headless: true, // ✅ Évite l'affichage graphique, false pour voir ce que fait Puppepeteer
     args: ["--no-sandbox", "--disable-setuid-sandbox"] // ✅ Réduit la consommation mémoire
   });
-  /*const browser = await puppeteer.launch({
-    headless: false, // ❌ Voir ce que fait Puppeteer
-    args: ["--no-sandbox", "--disable-setuid-sandbox"],
-  });*/
+
   const page = await browser.newPage();
   const results = [];
 
